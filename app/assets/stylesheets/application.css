@@ -13,3 +13,10 @@
  *= require_tree .
  *= require_self
  */
+
+.article {
+  margin-top: 2rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  margin-bottom: 2rem;
+}

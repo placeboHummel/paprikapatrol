@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
-  get 'home/index'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  root to: "home#index"
+
+  get "/recipe", to: "recipe#index"
+  get "recipe/show/:id", to: "recipe#show"
+
+  get "/recipe/new", to: "recipe#new"
+  get "recipe/edit/:id", to: "recipe#edit"
+  post "/recipe/new", to: "recipe#create"
+  patch "recipe/:id", to: "recipe#update"
 end

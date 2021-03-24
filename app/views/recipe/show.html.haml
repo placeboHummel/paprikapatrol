@@ -1,0 +1,14 @@
+.hero-body
+  .container.has-text-centered
+    .columns.is-vcentered
+      .column.is-5
+        %figure.image.is-4by3
+          %img{:alt => "Description", :src => "https://picsum.photos/800/600/?random"}/
+      .column.is-6.is-offset-1
+        %h1.title.is-2= @recipe.title
+        %a{:href => "/recipe/edit/#{@recipe.id}"}
+          .subtitle.is-4
+          ✎ Bearbeiten
+        %br/
+        .box
+          %p.has-text-centered= @recipe.description

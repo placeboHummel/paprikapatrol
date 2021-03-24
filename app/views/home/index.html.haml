@@ -1,0 +1,15 @@
+%h1.title Alle Rezepte
+
+- @recipe.each_slice(4) do |recipes|
+  .columns
+    - recipes.each do |recipe|
+      .column
+        .card
+          .card-image
+            %figure.image.is-4by3
+              %img{:alt => "Placeholder image", :src => "https://bulma.io/images/placeholders/1280x960.png"}/
+          .card-content
+            %a{:href => "/recipe/show/#{recipe.id}"}
+              %p.title.is-4= recipe.title
+            .content
+              = recipe.description
