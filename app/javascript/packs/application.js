@@ -22,5 +22,5 @@ window.$ = $;
 $("document").ready(function () {
   setTimeout(function () {
     $("#notice-message").fadeOut();
-  }, 4000);
+  }, 2000);
 });

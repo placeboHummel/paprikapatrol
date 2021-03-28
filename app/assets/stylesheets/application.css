@@ -16,8 +16,8 @@
 
 .article {
   margin-top: 2rem;
-  margin-left: 2rem;
-  margin-right: 2rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
   margin-bottom: 2rem;
 }
 
@@ -40,4 +40,11 @@
   background: white;
   cursor: inherit;
   display: block;
+}
+
+.alignleft {
+  float: left;
+}
+.alignright {
+  float: right;
 }

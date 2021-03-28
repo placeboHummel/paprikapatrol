@@ -1,0 +1,14 @@
+%table.table
+  %thead
+    %tr
+      %th 
+        Bearbeiten
+      %th
+        Löschen
+  %tbody
+  - @recipe.each do |recipe|
+    %tr
+      %td
+        %a{:href => "/#{recipe.id}/edit"}
+          %p= recipe.title
+      %td X
