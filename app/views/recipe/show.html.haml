@@ -6,9 +6,7 @@
           %img{:alt => "Description", :src => "https://picsum.photos/800/600/?random"}/
       .column.is-6.is-offset-1
         %h1.title.is-2= @recipe.title
-        %a{:href => "/recipe/edit/#{@recipe.id}"}
-          .subtitle.is-4
-          ✎ Bearbeiten
+        %a.subtitle.is-4= link_to "Bearbeitenn", edit_recipe_path
         %br/
         .box
           %p.has-text-centered= @recipe.description
