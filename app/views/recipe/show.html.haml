@@ -3,10 +3,8 @@
     .columns.is-vcentered
       .column.is-5
         %figure.image.is-4by3
-          %img{:alt => "Description", :src => "https://picsum.photos/800/600/?random"}/
+          = image_tag @recipe.main_image if @recipe.main_image.attached?
       .column.is-6.is-offset-1
-        %h1.title.is-2= @recipe.title
-        %a.subtitle.is-4= link_to "Bearbeitenn", edit_recipe_path
-        %br/
+        %h4.title.is-5= @recipe.title
         .box
           %p.has-text-centered= @recipe.description

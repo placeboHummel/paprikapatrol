@@ -21,6 +21,6 @@ window.$ = $;
 
 $("document").ready(function () {
   setTimeout(function () {
-    $("#notice-message").slideUp();
+    $("#notice-message").fadeOut();
   }, 4000);
 });

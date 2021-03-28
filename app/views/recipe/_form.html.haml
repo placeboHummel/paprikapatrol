@@ -7,5 +7,10 @@
     %label.label Beschreibung
     = form.text_area :description, :placeholder => "Was gehört zum Rezept?", class: "textarea"
 
+  %div.field
+    %div.btn-file.button.is-text.is-light
+      Bild hochladen..
+      = form.file_field :main_image
+
   %div.control
-    %input.button.is-link{:type => "submit", :value => "Speichern"}
+    %input.button.is-link.is-fullwidth{:type => "submit", :value => "Speichern"}
