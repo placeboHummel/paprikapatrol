@@ -18,18 +18,22 @@
 @import "trix/dist/trix";
 @import "./actiontext.scss";
 
+body {
+  max-width: 800px;
+  margin: 0 auto !important;
+  float: none !important;
+}
+
 .yield {
   margin-top: 1rem;
   margin-left: 1rem;
   margin-right: 1rem;
   margin-bottom: 2rem;
-  max-width: 800px;
 }
 .header {
-  margin-top: 0.5rem;
+  margin-top: 1rem;
   margin-left: 1rem;
   margin-right: 1rem;
-  max-width: 800px;
 }
 .btn-file {
   position: relative;
