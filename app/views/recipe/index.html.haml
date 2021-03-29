@@ -10,10 +10,10 @@
   %tbody
   - @recipe.each do |recipe|
     %tr
-      %td= image_tag recipe.main_image, size: "300"
+      %td= image_tag recipe.main_image.variant(resize_to_limit: [300, 300]) if recipe.main_image.attached?
       %td
         %a{:href => "/#{recipe.id}/edit"}
           %p= "✎ " + recipe.title
         %td= link_to "X", recipe_delete_path(recipe), method: :delete, class: "delete", data: { confirm: "Willst du '#{recipe.title}' wirklich löschen?" }
 
-= will_paginate @recipe
+.flickr_pagination= will_paginate @recipe, previous_label: "Zurück", next_label: "Weiter"
