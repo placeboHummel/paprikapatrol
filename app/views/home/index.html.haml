@@ -1,12 +1,10 @@
-%h1.title Alle Rezepte
-
 - @recipe.each_slice(2) do |recipes|
   .columns
     - recipes.each do |recipe|
       .column
         .card
           .card-image
-            %figure.image.is-4by3
+            %figure.image
               %a{:href => "/#{recipe.id}"}
                 = image_tag recipe.main_image if recipe.main_image.attached?
           .card-content

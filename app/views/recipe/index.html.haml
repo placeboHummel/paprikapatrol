@@ -3,16 +3,14 @@
     = content_tag :div, value, class: "notification is-success #{key}"
     %br
 
-%table.table
+.title.is-4 Rezepte verwalten
+%table.table.is-fullwidth
   %thead
     %tr
-      %th Bearbeiten
-      %th
-        Löschen
   %tbody
   - @recipe.each do |recipe|
     %tr
       %td
         %a{:href => "/#{recipe.id}/edit"}
-          %p= recipe.title
+          %p= "✎ " + recipe.title
         %td= link_to "X", recipe_delete_path(recipe), method: :delete, class: "delete", data: { confirm: 'Bist du sicher?' }

@@ -18,9 +18,3 @@ require("jQuery");
 
 window.jQuery = $;
 window.$ = $;
-
-$("document").ready(function () {
-  setTimeout(function () {
-    $("#notice-message").fadeOut();
-  }, 2000);
-});

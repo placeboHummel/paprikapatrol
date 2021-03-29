@@ -1,6 +1,6 @@
 - if @recipe.main_image.attached?
   .card
-    %figure.image.is-4by3
+    %figure.image
       = image_tag @recipe.main_image if @recipe.main_image.attached?
 %br
 = render partial: "form", locals: {url: recipe_update_path}
