@@ -1,3 +1,8 @@
+%div
+  - flash.each do |key, value|
+    = content_tag :div, value, class: "notification is-success #{key}"
+    %br
+
 %table.table
   %thead
     %tr
@@ -10,4 +15,4 @@
       %td
         %a{:href => "/#{recipe.id}/edit"}
           %p= recipe.title
-      %td X
+        %td= link_to "X", recipe_delete_path(recipe), method: :delete, class: "delete", data: { confirm: 'Bist du sicher?' }

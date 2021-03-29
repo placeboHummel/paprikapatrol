@@ -1,5 +1,5 @@
 %nav.navbar{"aria-label" => "main navigation", :role => "navigation"}
   .navbar-brand
-    = link_to image_tag("plant-based.png", size: "50x50"), "http://192.168.178.67:3000/"
-    = link_to "Verwalten", recipe_index_path, class: "navbar-item"
-    = link_to "Neues Rezept", recipe_new_path, class: "navbar-item"
+    = link_to image_tag("plant-based.png", size: "50x50") + " ", "http://192.168.178.67:3000/", style: "margin-right: 1rem"
+    = link_to image_tag("list.png") + " ⠀Verwalten", recipe_index_path, class: "navbar-item level-right"
+    = link_to image_tag("add.png") + " ⠀Hinzufügen", recipe_new_path, class: "navbar-item"

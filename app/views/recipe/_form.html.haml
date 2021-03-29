@@ -12,8 +12,9 @@
       ⇡ Bild hochladen..
       = form.file_field :main_image
 
-  %div.field
-    %input.button.is-danger.alignright{:type => "submit", :value => "✗ Löschen"}
+  - if @recipe.id.present?
+    %div.field
+      .button.is-danger.alignright= link_to "✗ Löschen", recipe_delete_path(@recipe), method: :delete, style: "color:#FFFFFF", data: { confirm: 'Bist du sicher?' }
 
   %div.control
     %br

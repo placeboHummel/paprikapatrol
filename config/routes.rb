@@ -6,5 +6,5 @@ Rails.application.routes.draw do
   get "/:id/edit", to: "recipe#edit", as: :edit_recipe
   patch "/:id/edit", to: "recipe#update", as: :recipe_update
   get "/:id", to: "recipe#show"
-  delete "/:id", to: "recipe#delete"
+  delete "/:id/delete", to: "recipe#delete", as: :recipe_delete
 end

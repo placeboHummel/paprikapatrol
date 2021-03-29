@@ -1,8 +1,9 @@
 .container.has-text-centered
   .columns.is-vcentered
     .column.is-5
+    - if @recipe.main_image.attached?
       %figure.image.is-4by3
-        = image_tag @recipe.main_image if @recipe.main_image.attached?
+        = image_tag @recipe.main_image
     .column.is-6.is-offset-1
       %h4.title.is-5= @recipe.title
       .box
