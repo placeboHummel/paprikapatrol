@@ -11,7 +11,7 @@ class RecipeController < ApplicationController
     @recipe = Recipe.new(recipe_params)
 
     if @recipe.save
-      redirect_to "/#{@recipe.id}", notice: "#{@recipe.title.capitalize} wurde erstellt."
+      redirect_to "/#{@recipe.id}", notice: "#{@recipe.title.titleize} wurde erstellt."
     else
       render "new"
     end
@@ -38,7 +38,7 @@ class RecipeController < ApplicationController
   def delete
     recipe = Recipe.find(params[:id])
     recipe.destroy
-    redirect_to recipe_index_path, notice: "#{recipe.title.capitalize} erfolgreich gelöscht."
+    redirect_to recipe_index_path, notice: "#{recipe.title.titleize} erfolgreich gelöscht."
   end
 
   private
