@@ -12,7 +12,11 @@
  *
  *= require_tree .
  *= require_self
+ //= require actiontext
  */
+
+@import "trix/dist/trix";
+@import "./actiontext.scss";
 
 .yield {
   margin-top: 1rem;
@@ -21,38 +25,48 @@
   margin-bottom: 2rem;
   max-width: 800px;
 }
-
 .header {
   margin-top: 0.5rem;
   margin-left: 1rem;
   margin-right: 1rem;
   max-width: 800px;
 }
-
 .btn-file {
   position: relative;
   overflow: hidden;
+  input[type="file"] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+  }
 }
-
-.btn-file input[type="file"] {
-  position: absolute;
-  top: 0;
-  right: 0;
-  min-width: 100%;
-  min-height: 100%;
-  font-size: 100px;
-  text-align: right;
-  filter: alpha(opacity=0);
-  opacity: 0;
-  outline: none;
-  background: white;
-  cursor: inherit;
-  display: block;
-}
-
 .alignleft {
   float: left;
 }
 .alignright {
   float: right;
+}
+
+trix-toolbar .trix-button-group--file-tools,
+.trix-button--icon-decrease-nesting-level,
+.trix-button--icon-increase-nesting-level,
+.trix-button--icon-code,
+.trix-button--icon-quote,
+.trix-button--icon-undo,
+.trix-button--icon-redo,
+.trix-button--icon-link,
+.trix-button-group.trix-button-group--history-tools,
+.trix-button--icon-bullet-list,
+.trix-button--icon-number-list {
+  display: none;
 }

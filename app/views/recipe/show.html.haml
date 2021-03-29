@@ -7,9 +7,8 @@
             - if @recipe.main_image.attached?
               .column.is-7.post-img
                 = image_tag @recipe.main_image
-              .column.is-9.featured-content.va
-                %div
-                  %h1.title.post-title= @recipe.title
-                  %p.post-excerpt= @recipe.description
-                  %br/
-                  %a.button.is-primary{:href => "#"} Bearbeiten
+            .column.is-9.featured-content.va
+              .title.is-4= @recipe.title
+              %p= @recipe.description
+              %br/
+              %a.button.is-primary{:href => "/#{@recipe.id}/edit"} Bearbeiten

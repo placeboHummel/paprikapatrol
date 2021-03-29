@@ -18,3 +18,6 @@ require("jQuery");
 
 window.jQuery = $;
 window.$ = $;
+
+require("trix")
+require("@rails/actiontext")

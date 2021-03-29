@@ -25,7 +25,7 @@ class RecipeController < ApplicationController
     @recipe = Recipe.find(params[:id])
 
     if @recipe.update(recipe_params)
-      redirect_to root_path
+      redirect_to "/#{@recipe.id}"
     else
       render "new"
     end
