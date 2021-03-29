@@ -14,11 +14,19 @@
  *= require_self
  */
 
-.article {
-  margin-top: 2rem;
+.yield {
+  margin-top: 1rem;
   margin-left: 1rem;
   margin-right: 1rem;
   margin-bottom: 2rem;
+  max-width: 800px;
+}
+
+.header {
+  margin-top: 0.5rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  max-width: 800px;
 }
 
 .btn-file {

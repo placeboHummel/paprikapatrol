@@ -1,6 +1,6 @@
 %h1.title Alle Rezepte
 
-- @recipe.each_slice(4) do |recipes|
+- @recipe.each_slice(2) do |recipes|
   .columns
     - recipes.each do |recipe|
       .column
@@ -11,4 +11,4 @@
                 = image_tag recipe.main_image if recipe.main_image.attached?
           .card-content
             %a{:href => "/#{recipe.id}"}
-              %p.title.is-6= recipe.title
+              %p.title.is-5= recipe.title

@@ -9,6 +9,7 @@
     %link{:href => "https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css", :rel => "stylesheet"}
     %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}
   %body
-    = render "layouts/header"
-    %article.article
+    %div.header
+      = render "layouts/header"
+    %div.yield
       = yield

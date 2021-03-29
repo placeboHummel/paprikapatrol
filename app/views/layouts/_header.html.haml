@@ -1,6 +1,5 @@
 %nav.navbar{"aria-label" => "main navigation", :role => "navigation"}
   .navbar-brand
-    %a.navbar-item{:href => "http://192.168.178.67:3000/"}
-      %img{:height => "28", :src => "https://i.imgur.com/gakNief.png", :width => "112"}
-      = link_to "Verwalten", recipe_index_path, class: "navbar-item"
-      = link_to "Neues Rezept", recipe_new_path, class: "navbar-item"
+    = link_to image_tag("plant-based.png", size: "50x50"), "http://192.168.178.67:3000/"
+    = link_to "Verwalten", recipe_index_path, class: "navbar-item"
+    = link_to "Neues Rezept", recipe_new_path, class: "navbar-item"
