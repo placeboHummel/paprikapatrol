@@ -14,7 +14,7 @@
 
   - if @recipe.id.present?
     %div.field
-      .button.is-danger.alignright= link_to "✗ Löschen", recipe_delete_path(@recipe), method: :delete, style: "color:#FFFFFF", data: { confirm: 'Bist du sicher?' }
+      .button.is-danger.alignright= link_to "✗ Löschen", recipe_delete_path(@recipe), method: :delete, style: "color:#FFFFFF", data: { confirm: "Willst du '#{recipe.title}' wirklich löschen?" }
 
   %div.control
     %br
