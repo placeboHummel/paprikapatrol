@@ -5,7 +5,7 @@
 
   %div.field
     %label.label Beschreibung
-    = form.rich_text_area :description, :placeholder => "Was gehört zum Rezept?", class: "textarea", rows: 10
+    = form.rich_text_area :description, :placeholder => "Was gehört zum Rezept?", class: "form-control"
 
   %div.field
     %div.btn-file.button.is-light.alignleft
@@ -14,7 +14,7 @@
 
   - if @recipe.id.present?
     %div.field
-      .button.is-danger.alignright= link_to "✗ Löschen", recipe_delete_path(@recipe), method: :delete, style: "color:#FFFFFF", data: { confirm: "Willst du '#{recipe.title}' wirklich löschen?" }
+      .button.is-danger.alignright= link_to "✗ Löschen", recipe_delete_path(@recipe), method: :delete, style: "color:#FFFFFF", data: { confirm: "Willst du '#{@recipe.title}' wirklich löschen?" }
 
   %div.control
     %br

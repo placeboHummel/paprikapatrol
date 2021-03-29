@@ -15,3 +15,5 @@
         %a{:href => "/#{recipe.id}/edit"}
           %p= "✎ " + recipe.title
         %td= link_to "X", recipe_delete_path(recipe), method: :delete, class: "delete", data: { confirm: "Willst du '#{recipe.title}' wirklich löschen?" }
+
+= will_paginate @recipe
