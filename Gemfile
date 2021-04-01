@@ -19,6 +19,7 @@ gem "turbolinks", "~> 5"
 gem "jbuilder", "~> 2.7"
 gem "will_paginate", "~> 3.1.0"
 gem "image_processing"
+gem "ransack"
 
 gem "haml"
 gem "simple_form"

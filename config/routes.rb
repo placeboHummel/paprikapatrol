@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root to: "home#index"
+
   get "/recipe", to: "recipe#index", as: :recipe_index
   get "/new", to: "recipe#new", as: :recipe_new
   post "/new", to: "recipe#create", as: :recipe_create

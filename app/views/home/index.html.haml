@@ -1,3 +1,8 @@
+.field
+  = search_form_for @q, url: root_path do |f|
+    .control
+      = f.search_field :title_cont, class: "input", placeholder: "Suche anch einem Rezept.."
+
 - @recipe.each_slice(2) do |recipes|
   .columns
     - recipes.each do |recipe|
