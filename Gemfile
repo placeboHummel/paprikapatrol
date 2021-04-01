@@ -20,6 +20,7 @@ gem "jbuilder", "~> 2.7"
 gem "will_paginate", "~> 3.1.0"
 gem "image_processing"
 gem "ransack"
+gem "font-awesome-rails"
 
 gem "haml"
 gem "simple_form"
