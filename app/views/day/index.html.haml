@@ -1,41 +1,205 @@
-.title.is-3 Wochenplan
-
-%strong Montag
-%a{:href => "/day/#{@momittag.id}/edit"}
-  %div Mittag
-%div= Recipe.find_by(id: @momittag.recipe_id).title
-%a{:href => "/day/#{@moabend.id}/edit"}
-  %div Abend
-%div= Recipe.find_by(id: @moabend.recipe_id).title
+.title.is-4 Montag
+.box
+  %article.media
+    .media-left
+      %figure.image.is-64x64
+        %a{:href => "/#{@momittag.recipe_id}/"}
+          %img= image_tag "Mittag.png"
+    .media-content
+      .content
+        %p
+          %strong= Recipe.find_by(id: @momittag.recipe_id).title
+          %br
+          %br
+          = image_tag Recipe.find_by(id: @momittag.recipe_id).main_image.variant(resize_to_limit: [150, 150])
+      %nav.level.is-mobile
+        .level-left
+          %a.level-item{:href => "/day/#{@momittag.id}/edit"}
+            %span.icon.is-small
+              = fa_icon "pencil-square-o"
+          %a.level-item{:href => "/#{@momittag.recipe_id}/"}
+            %span.icon.is-small
+              = fa_icon "cutlery"
+  %article.media
+    .media-left
+      %figure.image.is-64x64
+        %a{:href => "/#{@moabend.recipe_id}/"}
+          %img= image_tag "Abend.png"
+    .media-content
+      .content
+        %p
+          %strong= Recipe.find_by(id: @moabend.recipe_id).title
+          %br
+          = image_tag Recipe.find_by(id: @momittag.recipe_id).main_image.variant(resize_to_limit: [150, 150])
+      %nav.level.is-mobile
+        .level-left
+          %a.level-item{:href => "/day/#{@moabend.id}/edit"}
+            %span.icon.is-small
+              = fa_icon "pencil-square-o"
+          %a.level-item{:href => "/#{@moabend.recipe_id}/"}
+            %span.icon.is-small
+              = fa_icon "cutlery"
 %hr
-%strong Dienstag
-%a{:href => "/day/#{@dimittag.id}/edit"}
-  %div Mittag
-%div= Recipe.find_by(id: @dimittag.recipe_id).title
-%a{:href => "/day/#{@diabend.id}/edit"}
-  %div Abend
-%div= Recipe.find_by(id: @diabend.recipe_id).title
+.title.is-4 Dienstag
+.box
+  %article.media
+    .media-left
+      %figure.image.is-64x64
+        %a{:href => "/#{@dimittag.recipe_id}/"}
+          %img= image_tag "lunch-bag.png"
+    .media-content
+      .content
+        %p
+          %strong= Recipe.find_by(id: @dimittag.recipe_id).title
+          %br
+          = Recipe.find_by(id: @dimittag.recipe_id).description.to_plain_text.truncate(80)
+      %nav.level.is-mobile
+        .level-left
+          %a.level-item{:href => "/day/#{@dimittag.id}/edit"}
+            %span.icon.is-small
+              = fa_icon "pencil-square-o"
+          %a.level-item{:href => "/#{@dimittag.recipe_id}/"}
+            %span.icon.is-small
+              = fa_icon "cutlery"
+  %article.media
+    .media-left
+      %figure.image.is-64x64
+        %a{:href => "/#{@diabend.recipe_id}/"}
+          %img= image_tag "night.png"
+    .media-content
+      .content
+        %p
+          %strong= Recipe.find_by(id: @diabend.recipe_id).title
+          %br
+          = Recipe.find_by(id: @diabend.recipe_id).description.to_plain_text.truncate(80)
+      %nav.level.is-mobile
+        .level-left
+          %a.level-item{:href => "/day/#{@diabend.id}/edit"}
+            %span.icon.is-small
+              = fa_icon "pencil-square-o"
+          %a.level-item{:href => "/#{@diabend.recipe_id}/"}
+            %span.icon.is-small
+              = fa_icon "cutlery"
 %hr
-%strong Mittwoch
-%a{:href => "/day/#{@mimittag.id}/edit"}
-  %div Mittag
-%div= Recipe.find_by(id: @mimittag.recipe_id).title
-%a{:href => "/day/#{@miabend.id}/edit"}
-  %div Abend
-%div= Recipe.find_by(id: @miabend.recipe_id).title
+.title.is-4 Mittwoch
+.box
+  %article.media
+    .media-left
+      %figure.image.is-64x64
+        %a{:href => "/#{@mimittag.recipe_id}/"}
+          %img= image_tag "lunch-bag.png"
+    .media-content
+      .content
+        %p
+          %strong= Recipe.find_by(id: @mimittag.recipe_id).title
+          %br
+          = Recipe.find_by(id: @mimittag.recipe_id).description.to_plain_text.truncate(80)
+      %nav.level.is-mobile
+        .level-left
+          %a.level-item{:href => "/day/#{@mimittag.id}/edit"}
+            %span.icon.is-small
+              = fa_icon "pencil-square-o"
+          %a.level-item{:href => "/#{@mimittag.recipe_id}/"}
+            %span.icon.is-small
+              = fa_icon "cutlery"
+  %article.media
+    .media-left
+      %figure.image.is-64x64
+        %a{:href => "/#{@miabend.recipe_id}/"}
+          %img= image_tag "night.png"
+    .media-content
+      .content
+        %p
+          %strong= Recipe.find_by(id: @miabend.recipe_id).title
+          %br
+          = Recipe.find_by(id: @miabend.recipe_id).description.to_plain_text.truncate(80)
+      %nav.level.is-mobile
+        .level-left
+          %a.level-item{:href => "/day/#{@miabend.id}/edit"}
+            %span.icon.is-small
+              = fa_icon "pencil-square-o"
+          %a.level-item{:href => "/#{@miabend.recipe_id}/"}
+            %span.icon.is-small
+              = fa_icon "cutlery"
 %hr
-%strong Donnerstag
-%a{:href => "/day/#{@domittag.id}/edit"}
-  %div Mittag
-%div= Recipe.find_by(id: @domittag.recipe_id).title
-%a{:href => "/day/#{@doabend.id}/edit"}
-  %div Abend
-%div= Recipe.find_by(id: @doabend.recipe_id).title
+.title.is-4 Donnerstag
+.box
+  %article.media
+    .media-left
+      %figure.image.is-64x64
+        %a{:href => "/#{@domittag.recipe_id}/"}
+          %img= image_tag "lunch-bag.png"
+    .media-content
+      .content
+        %p
+          %strong= Recipe.find_by(id: @domittag.recipe_id).title
+          %br
+          = Recipe.find_by(id: @domittag.recipe_id).description.to_plain_text.truncate(80)
+      %nav.level.is-mobile
+        .level-left
+          %a.level-item{:href => "/day/#{@domittag.id}/edit"}
+            %span.icon.is-small
+              = fa_icon "pencil-square-o"
+          %a.level-item{:href => "/#{@domittag.recipe_id}/"}
+            %span.icon.is-small
+              = fa_icon "cutlery"
+  %article.media
+    .media-left
+      %figure.image.is-64x64
+        %a{:href => "/#{@doabend.recipe_id}/"}
+          %img= image_tag "night.png"
+    .media-content
+      .content
+        %p
+          %strong= Recipe.find_by(id: @doabend.recipe_id).title
+          %br
+          = Recipe.find_by(id: @doabend.recipe_id).description.to_plain_text.truncate(80)
+      %nav.level.is-mobile
+        .level-left
+          %a.level-item{:href => "/day/#{@doabend.id}/edit"}
+            %span.icon.is-small
+              = fa_icon "pencil-square-o"
+          %a.level-item{:href => "/#{@doabend.recipe_id}/"}
+            %span.icon.is-small
+              = fa_icon "cutlery"
 %hr
-%strong Freitag
-%a{:href => "/day/#{@frmittag.id}/edit"}
-  %div Mittag
-%div= Recipe.find_by(id: @frmittag.recipe_id).title
-%a{:href => "/day/#{@frabend.id}/edit"}
-  %div Abend
-%div= Recipe.find_by(id: @frabend.recipe_id).title
+.title.is-4 Freitag
+.box
+  %article.media
+    .media-left
+      %figure.image.is-64x64
+        %a{:href => "/#{@frmittag.recipe_id}/"}
+          %img= image_tag "lunch-bag.png"
+    .media-content
+      .content
+        %p
+          %strong= Recipe.find_by(id: @frmittag.recipe_id).title
+          %br
+          = Recipe.find_by(id: @frmittag.recipe_id).description.to_plain_text.truncate(80)
+      %nav.level.is-mobile
+        .level-left
+          %a.level-item{:href => "/day/#{@frmittag.id}/edit"}
+            %span.icon.is-small
+              = fa_icon "pencil-square-o"
+          %a.level-item{:href => "/#{@frmittag.recipe_id}/"}
+            %span.icon.is-small
+              = fa_icon "cutlery"
+  %article.media
+    .media-left
+      %figure.image.is-64x64
+        %a{:href => "/#{@frabend.recipe_id}/"}
+          %img= image_tag "night.png"
+    .media-content
+      .content
+        %p
+          %strong= Recipe.find_by(id: @frabend.recipe_id).title
+          %br
+          = Recipe.find_by(id: @frabend.recipe_id).description.to_plain_text.truncate(80)
+      %nav.level.is-mobile
+        .level-left
+          %a.level-item{:href => "/day/#{@frabend.id}/edit"}
+            %span.icon.is-small
+              = fa_icon "pencil-square-o"
+          %a.level-item{:href => "/#{@frabend.recipe_id}/"}
+            %span.icon.is-small
+              = fa_icon "cutlery"
