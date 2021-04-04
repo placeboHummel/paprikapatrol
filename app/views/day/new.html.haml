@@ -1,0 +1,6 @@
+%div
+  - flash.each do |key, value|
+    = content_tag :div, value, class: "notification is-primary #{key}"
+    %br
+
+= render partial: "form", locals: {url: day_create_path}

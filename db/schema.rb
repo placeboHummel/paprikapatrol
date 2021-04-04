@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_29_085616) do
+ActiveRecord::Schema.define(version: 2021_04_04_154310) do
+
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
     t.text "body"
@@ -42,6 +43,14 @@ ActiveRecord::Schema.define(version: 2021_03_29_085616) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "days", force: :cascade do |t|
+    t.string "name"
+    t.integer "recipe_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["recipe_id"], name: "index_days_on_recipe_id"
+  end
+
   create_table "recipes", force: :cascade do |t|
     t.string "title"
     t.text "description"
@@ -50,4 +59,5 @@ ActiveRecord::Schema.define(version: 2021_03_29_085616) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "days", "recipes"
 end

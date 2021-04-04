@@ -1,0 +1,41 @@
+.title.is-3 Wochenplan
+
+%strong Montag
+%a{:href => "/day/#{@momittag.id}/edit"}
+  %div Mittag
+%div= Recipe.find_by(id: @momittag.recipe_id).title
+%a{:href => "/day/#{@moabend.id}/edit"}
+  %div Abend
+%div= Recipe.find_by(id: @moabend.recipe_id).title
+%hr
+%strong Dienstag
+%a{:href => "/day/#{@dimittag.id}/edit"}
+  %div Mittag
+%div= Recipe.find_by(id: @dimittag.recipe_id).title
+%a{:href => "/day/#{@diabend.id}/edit"}
+  %div Abend
+%div= Recipe.find_by(id: @diabend.recipe_id).title
+%hr
+%strong Mittwoch
+%a{:href => "/day/#{@mimittag.id}/edit"}
+  %div Mittag
+%div= Recipe.find_by(id: @mimittag.recipe_id).title
+%a{:href => "/day/#{@miabend.id}/edit"}
+  %div Abend
+%div= Recipe.find_by(id: @miabend.recipe_id).title
+%hr
+%strong Donnerstag
+%a{:href => "/day/#{@domittag.id}/edit"}
+  %div Mittag
+%div= Recipe.find_by(id: @domittag.recipe_id).title
+%a{:href => "/day/#{@doabend.id}/edit"}
+  %div Abend
+%div= Recipe.find_by(id: @doabend.recipe_id).title
+%hr
+%strong Freitag
+%a{:href => "/day/#{@frmittag.id}/edit"}
+  %div Mittag
+%div= Recipe.find_by(id: @frmittag.recipe_id).title
+%a{:href => "/day/#{@frabend.id}/edit"}
+  %div Abend
+%div= Recipe.find_by(id: @frabend.recipe_id).title

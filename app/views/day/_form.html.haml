@@ -1,0 +1,12 @@
+= form_with model: @day, url: url do |form|
+  %div.field
+    %label.label Tag
+    = form.text_field :name, :placeholder => "Wochentag", class: "input"
+
+  %div.field
+    %label.label Rezept
+    .select= form.collection_select :recipe_id, Recipe.all, :id, :title, prompt: "Wähle ein Rezept"
+
+  %div.control
+    %br
+    %input.button.is-link.is-fullwidth{:type => "submit", :value => "Speichern"}
