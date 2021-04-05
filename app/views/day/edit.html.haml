@@ -1,1 +1,6 @@
+.title.is-5= @day.name
+.card
+  %figure.image
+    = image_tag Recipe.find_by(id: @day.recipe_id).main_image if Recipe.find_by(id: @day.recipe_id).present? && Recipe.find_by(id: @day.recipe_id).main_image.attached?
+%br
 = render partial: "form", locals: {url: day_update_path}

@@ -3,35 +3,31 @@
   %article.media
     .media-left
       %figure.image.is-64x64
-        %a{:href => "/#{@momittag.recipe_id}/"}
-          %img= image_tag "lunch-bag.png"
+        %img= image_tag "lunch-bag.png"
     .media-content
       .content
         .title.is-5= Recipe.find_by(id: @momittag.recipe_id).title if Recipe.find_by(id: @momittag.recipe_id).present?
       %nav.level.is-mobile
         .level-left
           %a.level-item{:href => "/day/#{@momittag.id}/edit"}
-            %span.icon.is-small
-              = fa_icon "pencil-square-o"
+            = fa_icon "pencil-square-o", text: "⠀Andere Mahlzeit"
+          | ⠀
           %a.level-item{:href => "/#{@momittag.recipe_id}/"}
-            %span.icon.is-small
-              = fa_icon "cutlery"
+            = fa_icon "cutlery", text: "⠀Zum Rezept"
   %article.media
     .media-left
       %figure.image.is-64x64
-        %a{:href => "/#{@moabend.recipe_id}/"}
-          %img= image_tag "night.png"
+        %img= image_tag "night.png"
     .media-content
       .content
         .title.is-5= Recipe.find_by(id: @moabend.recipe_id).title if Recipe.find_by(id: @moabend.recipe_id).present?
       %nav.level.is-mobile
         .level-left
           %a.level-item{:href => "/day/#{@moabend.id}/edit"}
-            %span.icon.is-small
-              = fa_icon "pencil-square-o"
+            = fa_icon "pencil-square-o", text: "⠀Andere Mahlzeit"
+          | ⠀
           %a.level-item{:href => "/#{@moabend.recipe_id}/"}
-            %span.icon.is-small
-              = fa_icon "cutlery"
+            = fa_icon "cutlery", text: "⠀Zum Rezept"
 %hr
 .title.is-4 Dienstag
 .box
@@ -46,11 +42,10 @@
       %nav.level.is-mobile
         .level-left
           %a.level-item{:href => "/day/#{@dimittag.id}/edit"}
-            %span.icon.is-small
-              = fa_icon "pencil-square-o"
+            = fa_icon "pencil-square-o", text: "⠀Andere Mahlzeit"
+          | ⠀
           %a.level-item{:href => "/#{@dimittag.recipe_id}/"}
-            %span.icon.is-small
-              = fa_icon "cutlery"
+            = fa_icon "cutlery", text: "⠀Zum Rezept"
   %article.media
     .media-left
       %figure.image.is-64x64
@@ -62,11 +57,10 @@
       %nav.level.is-mobile
         .level-left
           %a.level-item{:href => "/day/#{@diabend.id}/edit"}
-            %span.icon.is-small
-              = fa_icon "pencil-square-o"
+            = fa_icon "pencil-square-o", text: "⠀Andere Mahlzeit"
+          | ⠀
           %a.level-item{:href => "/#{@diabend.recipe_id}/"}
-            %span.icon.is-small
-              = fa_icon "cutlery"
+            = fa_icon "cutlery", text: "⠀Zum Rezept"
 %hr
 .title.is-4 Mittwoch
 .box
@@ -81,11 +75,10 @@
       %nav.level.is-mobile
         .level-left
           %a.level-item{:href => "/day/#{@mimittag.id}/edit"}
-            %span.icon.is-small
-              = fa_icon "pencil-square-o"
+            = fa_icon "pencil-square-o", text: "⠀Andere Mahlzeit"
+          | ⠀
           %a.level-item{:href => "/#{@mimittag.recipe_id}/"}
-            %span.icon.is-small
-              = fa_icon "cutlery"
+            = fa_icon "cutlery", text: "⠀Zum Rezept"
   %article.media
     .media-left
       %figure.image.is-64x64
@@ -97,11 +90,10 @@
       %nav.level.is-mobile
         .level-left
           %a.level-item{:href => "/day/#{@miabend.id}/edit"}
-            %span.icon.is-small
-              = fa_icon "pencil-square-o"
+            = fa_icon "pencil-square-o", text: "⠀Andere Mahlzeit"
+          | ⠀
           %a.level-item{:href => "/#{@miabend.recipe_id}/"}
-            %span.icon.is-small
-              = fa_icon "cutlery"
+            = fa_icon "cutlery", text: "⠀Zum Rezept"
 %hr
 .title.is-4 Donnerstag
 .box
@@ -116,11 +108,10 @@
       %nav.level.is-mobile
         .level-left
           %a.level-item{:href => "/day/#{@domittag.id}/edit"}
-            %span.icon.is-small
-              = fa_icon "pencil-square-o"
+            = fa_icon "pencil-square-o", text: "⠀Andere Mahlzeit"
+          | ⠀
           %a.level-item{:href => "/#{@domittag.recipe_id}/"}
-            %span.icon.is-small
-              = fa_icon "cutlery"
+            = fa_icon "cutlery", text: "⠀Zum Rezept"
   %article.media
     .media-left
       %figure.image.is-64x64
@@ -132,11 +123,10 @@
       %nav.level.is-mobile
         .level-left
           %a.level-item{:href => "/day/#{@doabend.id}/edit"}
-            %span.icon.is-small
-              = fa_icon "pencil-square-o"
+            = fa_icon "pencil-square-o", text: "⠀Andere Mahlzeit"
+          | ⠀
           %a.level-item{:href => "/#{@doabend.recipe_id}/"}
-            %span.icon.is-small
-              = fa_icon "cutlery"
+            = fa_icon "cutlery", text: "⠀Zum Rezept"
 %hr
 .title.is-4 Freitag
 .box
@@ -151,11 +141,10 @@
       %nav.level.is-mobile
         .level-left
           %a.level-item{:href => "/day/#{@frmittag.id}/edit"}
-            %span.icon.is-small
-              = fa_icon "pencil-square-o"
+            = fa_icon "pencil-square-o", text: "⠀Andere Mahlzeit"
+          | ⠀
           %a.level-item{:href => "/#{@frmittag.recipe_id}/"}
-            %span.icon.is-small
-              = fa_icon "cutlery"
+            = fa_icon "cutlery", text: "⠀Zum Rezept"
   %article.media
     .media-left
       %figure.image.is-64x64
@@ -167,8 +156,7 @@
       %nav.level.is-mobile
         .level-left
           %a.level-item{:href => "/day/#{@frabend.id}/edit"}
-            %span.icon.is-small
-              = fa_icon "pencil-square-o"
+            = fa_icon "pencil-square-o", text: "⠀Andere Mahlzeit"
+          | ⠀
           %a.level-item{:href => "/#{@frabend.recipe_id}/"}
-            %span.icon.is-small
-              = fa_icon "cutlery"
+            = fa_icon "cutlery", text: "⠀Zum Rezept"
