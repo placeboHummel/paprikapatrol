@@ -21,6 +21,7 @@ gem "will_paginate", "~> 3.1.0"
 gem "image_processing"
 gem "ransack"
 gem "font-awesome-rails"
+gem "awesome_print"
 
 gem "haml"
 gem "simple_form"

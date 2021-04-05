@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_04_154310) do
+ActiveRecord::Schema.define(version: 2021_04_05_084840) do
 
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 2021_04_04_154310) do
 
   create_table "days", force: :cascade do |t|
     t.string "name"
-    t.integer "recipe_id", null: false
+    t.integer "recipe_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["recipe_id"], name: "index_days_on_recipe_id"
