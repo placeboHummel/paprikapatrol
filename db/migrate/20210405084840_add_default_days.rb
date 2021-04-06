@@ -10,5 +10,9 @@ class AddDefaultDays < ActiveRecord::Migration[6.0]
     Day.create(id: 8, name: "Donnerstag Abend")
     Day.create(id: 9, name: "Freitag Mittag")
     Day.create(id: 10, name: "Freitag Abend")
+    Day.create(id: 11, name: "Samstag Mittag")
+    Day.create(id: 12, name: "Samstag Abend")
+    Day.create(id: 13, name: "Sonntag Mittag")
+    Day.create(id: 14, name: "Sonntag Abend")
   end
 end
