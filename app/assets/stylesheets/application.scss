@@ -62,25 +62,31 @@ body {
   float: right;
 }
 
-trix-toolbar .trix-button-group--file-tools,
-.trix-button--icon-decrease-nesting-level,
-.trix-button--icon-increase-nesting-level,
-.trix-button--icon-code,
+trix-toolbar .trix-button--icon-code,
 .trix-button--icon-quote,
-.trix-button--icon-undo,
-.trix-button--icon-redo,
-.trix-button--icon-link,
-.trix-button-group.trix-button-group--history-tools,
-.trix-button--icon-bullet-list,
-.trix-button--icon-number-list {
+.trix-button-group.trix-button-group--history-tools {
   display: none;
+}
+
+ul li {
+  list-style: disc;
 }
 
 trix-editor {
   &.form-control {
     max-height: 20rem;
+    max-width: auto !important;
     overflow-y: scroll;
   }
+}
+
+trix-editor ul {
+  list-style-type: disc !important;
+  margin-left: 1rem !important;
+}
+trix-editor ol {
+  list-style-type: decimal !important;
+  margin-left: 1rem !important;
 }
 
 .flickr_pagination {
