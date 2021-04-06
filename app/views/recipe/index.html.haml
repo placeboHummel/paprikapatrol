@@ -3,8 +3,14 @@
     = content_tag :div, value, class: "notification is-success #{key}"
     %br
 
+%a.button.is-success.is-small.is-light.alignright{:href => "/new"}
+  = fa_icon "plus"
 .title.is-4 Rezepte verwalten
-.subtitle= link_to "+ Neues Rezept", recipe_new_path
+.field
+  = search_form_for @q, url: recipe_index_path do |f|
+    .control
+      = f.search_field :title_cont, class: "input", placeholder: "Suche nach einem Rezept.."
+
 %table.table.is-fullwidth
   %thead
     %tr
