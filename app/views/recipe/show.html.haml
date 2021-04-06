@@ -3,17 +3,14 @@
     = content_tag :div, value, class: "notification is-success #{key}"
     %br
 
-.container
-  .columns
-    .column.is-10
-      .columns.featured-post.is-multiline
-        .column.is-12.post
-          %article.columns.featured
-            - if @recipe.main_image.attached?
-              .column.is-7.post-img
-                = image_tag @recipe.main_image
-            .column.is-9.featured-content.va
-              .title.is-4= @recipe.title
-              = @recipe.description
-              %br/
-              %a.button.is-primary{:href => "/#{@recipe.id}/edit"} Bearbeiten
+%section.hero
+  .card 
+    .card-image
+      %figure.image
+        %img= image_tag @recipe.main_image.variant(resize_to_limit: [700, 550]) if @recipe.main_image.attached?
+  %br
+  .container
+    %a.button.is-info.is-small.is-light.alignright{:href => "/#{@recipe.id}/edit"}
+      = fa_icon "pencil"
+    %h2.title.is-4= @recipe.title
+    %p= @recipe.description
