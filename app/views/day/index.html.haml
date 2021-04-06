@@ -160,3 +160,69 @@
           | ⠀
           %a.level-item{:href => "/#{@frabend.recipe_id}/"}
             = fa_icon "cutlery", text: "⠀Zum Rezept"
+%hr
+.title.is-4 Samstag
+.box
+  %article.media
+    .media-left
+      %figure.image.is-64x64
+        %a{:href => "/#{@samittag.recipe_id}/"}
+          %img= image_tag "sun.png"
+    .media-content
+      .content
+        .title.is-5= Recipe.find_by(id: @samittag.recipe_id).title if Recipe.find_by(id: @samittag.recipe_id).present?
+      %nav.level.is-mobile
+        .level-left
+          %a.level-item{:href => "/day/#{@samittag.id}/edit"}
+            = fa_icon "pencil-square-o"
+          | ⠀
+          %a.level-item{:href => "/#{@samittag.recipe_id}/"}
+            = fa_icon "cutlery", text: "⠀Zum Rezept"
+  %article.media
+    .media-left
+      %figure.image.is-64x64
+        %a{:href => "/#{@saabend.recipe_id}/"}
+          %img= image_tag "cloudy-night.png"
+    .media-content
+      .content
+        .title.is-5= Recipe.find_by(id: @saabend.recipe_id).title if Recipe.find_by(id: @saabend.recipe_id).present?
+      %nav.level.is-mobile
+        .level-left
+          %a.level-item{:href => "/day/#{@saabend.id}/edit"}
+            = fa_icon "pencil-square-o"
+          | ⠀
+          %a.level-item{:href => "/#{@saabend.recipe_id}/"}
+            = fa_icon "cutlery", text: "⠀Zum Rezept"
+%hr
+.title.is-4 Sonntag
+.box
+  %article.media
+    .media-left
+      %figure.image.is-64x64
+        %a{:href => "/#{@somittag.recipe_id}/"}
+          %img= image_tag "sun.png"
+    .media-content
+      .content
+        .title.is-5= Recipe.find_by(id: @somittag.recipe_id).title if Recipe.find_by(id: @somittag.recipe_id).present?
+      %nav.level.is-mobile
+        .level-left
+          %a.level-item{:href => "/day/#{@somittag.id}/edit"}
+            = fa_icon "pencil-square-o"
+          | ⠀
+          %a.level-item{:href => "/#{@somittag.recipe_id}/"}
+            = fa_icon "cutlery", text: "⠀Zum Rezept"
+  %article.media
+    .media-left
+      %figure.image.is-64x64
+        %a{:href => "/#{@soabend.recipe_id}/"}
+          %img= image_tag "cloudy-night.png"
+    .media-content
+      .content
+        .title.is-5= Recipe.find_by(id: @soabend.recipe_id).title if Recipe.find_by(id: @soabend.recipe_id).present?
+      %nav.level.is-mobile
+        .level-left
+          %a.level-item{:href => "/day/#{@soabend.id}/edit"}
+            = fa_icon "pencil-square-o"
+          | ⠀
+          %a.level-item{:href => "/#{@soabend.recipe_id}/"}
+            = fa_icon "cutlery", text: "⠀Zum Rezept"

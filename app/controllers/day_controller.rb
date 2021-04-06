@@ -11,6 +11,10 @@ class DayController < ApplicationController
     @doabend = Day.find_by(name: "Donnerstag Abend")
     @frmittag = Day.find_by(name: "Freitag Mittag")
     @frabend = Day.find_by(name: "Freitag Abend")
+    @samittag = Day.find_by(name: "Samstag Mittag")
+    @saabend = Day.find_by(name: "Samstag Abend")
+    @somittag = Day.find_by(name: "Sonntag Mittag")
+    @soabend = Day.find_by(name: "Sonntag Abend")
   end
 
   def new
