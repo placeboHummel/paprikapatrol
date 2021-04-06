@@ -1,6 +1,6 @@
 = form_with model: @day, url: url do |form|
   %div.field
-    .select.is-fullwidth= form.collection_select :recipe_id, Recipe.all, :id, :title, prompt: "Wähle ein Rezept"
+    .select.is-fullwidth= form.collection_select :recipe_id, Recipe.order("updated_at DESC").all, :id, :title, include_blank: "Nicht geplant"
 
   %div.control
     %br
