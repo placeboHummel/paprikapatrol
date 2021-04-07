@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/thecodechef/devise-bulma-views.git
+  revision: b5b976e1402a9f83ab8afe8ceefbc86a9c8c4275
+  specs:
+    devise-bulma-views (0.1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -239,6 +245,7 @@ DEPENDENCIES
   byebug
   capybara (>= 2.15)
   devise
+  devise-bulma-views!
   font-awesome-rails
   haml
   image_processing

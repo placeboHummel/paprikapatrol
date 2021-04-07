@@ -23,6 +23,7 @@ gem "ransack"
 gem "font-awesome-rails"
 gem "awesome_print"
 gem "devise"
+gem "devise-bulma-views", github: "thecodechef/devise-bulma-views"
 
 gem "haml"
 gem "simple_form"
