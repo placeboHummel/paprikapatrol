@@ -3,24 +3,24 @@
   = search_form_for @q, url: root_path do |f|
     .field.has-addons
       .control.has-icons-left.is-expanded
-        = f.search_field :title_cont, class: "input", placeholder: "Suche nach einem Rezept.."
+        = f.search_field :title_cont, class: "input", placeholder: "Suche nach einem Rezept"
         %span.icon.is-left
           %i.fa.fa-search
       .control
         %a.button.is-light.gridbutton{:href => "/home/grid"}
-          = fa_icon "th-large"
+          = fa_icon "square"
 %br
-- @recipe.each_slice(1) do |recipes|
-  .columns
+- @recipe.each_slice(2) do |recipes|
+  .columns.is-mobile.is-variable.is-1
     - recipes.each do |recipe|
-      .column
+      .column.columnhome
         .card
           .card-image
             %figure.image
               %a{:href => "/#{recipe.id}"}
-                = image_tag recipe.main_image.variant(resize_to_limit: [550, 550]) if recipe.main_image.attached?
+                = image_tag recipe.main_image.variant(resize_to_limit: [800, 800]) if recipe.main_image.attached?
           .card-content
-            %a{:href => "/#{recipe.id}"}
-              %p.title.is-5= recipe.title
+            %a{:href => "/#{recipe.id}", :class => "has-text-dark"}
+              %p= recipe.title
 
 .flickr_pagination= will_paginate @recipe, previous_label: "«", next_label: "»"

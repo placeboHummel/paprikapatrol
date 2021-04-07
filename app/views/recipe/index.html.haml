@@ -1,11 +1,14 @@
-%a.button.is-success.is-small.is-light.alignright{:href => "/new"}
-  = fa_icon "plus"
-.title.is-4 Rezepte verwalten
-.field
-  = search_form_for @q, url: recipe_index_path do |f|
-    .control
-      = f.search_field :title_cont, class: "input", placeholder: "Suche nach einem Rezept.."
-
+.container
+  = search_form_for @q, url: root_path do |f|
+    .field.has-addons
+      .control.has-icons-left.is-expanded
+        = f.search_field :title_cont, class: "input", placeholder: "Suche nach einem Rezept"
+        %span.icon.is-left
+          %i.fa.fa-search
+      .control
+      %a.button.alignright{:href => "/new"}
+        = image_tag "add_recipe.png", size: "30x30"
+%br
 %table.table.is-fullwidth
   %thead
     %tr

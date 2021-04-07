@@ -3,17 +3,17 @@
   = search_form_for @q, url: root_path do |f|
     .field.has-addons
       .control.has-icons-left.is-expanded
-        = f.search_field :title_cont, class: "input", placeholder: "Suche nach einem Rezept.."
+        = f.search_field :title_cont, class: "input", placeholder: "Suche nach einem Rezept"
         %span.icon.is-left
           %i.fa.fa-search
       .control
         %a.button.is-light.gridbutton{:href => "/"}
-          = fa_icon "square"
+          = fa_icon "th-large"
 %br
-- @recipe.each_slice(2) do |recipes|
-  .columns.is-mobile.is-variable.is-1
+- @recipe.each_slice(1) do |recipes|
+  .columns
     - recipes.each do |recipe|
-      .column.columnhome
+      .column
         .card
           .card-image
             %figure.image
