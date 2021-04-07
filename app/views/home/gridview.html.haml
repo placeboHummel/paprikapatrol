@@ -7,13 +7,13 @@
         %span.icon.is-left
           %i.fa.fa-search
       .control
-        %a.button.is-light.gridbutton{:href => "/home/grid"}
-          = fa_icon "th-large"
+        %a.button.is-light.gridbutton{:href => "/"}
+          = fa_icon "square"
 %br
-- @recipe.each_slice(1) do |recipes|
-  .columns
+- @recipe.each_slice(2) do |recipes|
+  .columns.is-mobile.is-variable.is-1
     - recipes.each do |recipe|
-      .column
+      .column.columnhome
         .card
           .card-image
             %figure.image
