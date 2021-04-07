@@ -18,5 +18,3 @@
           %p= recipe.title
         %td= link_to "#{fa_icon "pencil"}".html_safe, edit_recipe_path(recipe)
         %td= link_to "#{fa_icon "trash"}".html_safe, recipe_delete_path(recipe), method: :delete, class: "", data: { confirm: "Willst du '#{recipe.title}' wirklich löschen?" }
-
-.flickr_pagination= will_paginate @recipe, previous_label: "Zurück", next_label: "Weiter"

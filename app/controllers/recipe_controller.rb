@@ -1,7 +1,7 @@
 class RecipeController < ApplicationController
   def index
     @q = Recipe.ransack(params[:q])
-    @recipe = @q.result(distinct: true).paginate(page: params[:page], per_page: 15).order("updated_at DESC")
+    @recipe = @q.result(distinct: true).order("title ASC")
   end
 
   def new
