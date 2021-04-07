@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   root to: "home#index"
 
   get "/day", to: "day#index", as: :day_index

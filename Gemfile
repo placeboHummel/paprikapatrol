@@ -22,6 +22,7 @@ gem "image_processing"
 gem "ransack"
 gem "font-awesome-rails"
 gem "awesome_print"
+gem "devise"
 
 gem "haml"
 gem "simple_form"
