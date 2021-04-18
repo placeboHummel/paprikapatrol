@@ -9,7 +9,7 @@
       %a.button.alignright{:href => "/new"}
         = image_tag "add_recipe.png", size: "30x30"
 %br
-%table.table.is-fullwidth
+%table.table.is-fullwidth.is-striped
   %thead
     %tr
   %tbody
@@ -19,5 +19,5 @@
       %td
         %a{:href => "/#{recipe.id}/", :class => "has-text-dark"}
           %p= recipe.title
-        %td= link_to "#{fa_icon "pencil"}".html_safe, edit_recipe_path(recipe)
-        %td= link_to "#{fa_icon "trash"}".html_safe, recipe_delete_path(recipe), method: :delete, class: "", data: { confirm: "Willst du '#{recipe.title}' wirklich löschen?" }
+        %br/
+        = link_to "#{fa_icon "pencil"}".html_safe, edit_recipe_path(recipe), class: "tag is-light is-small table-button"

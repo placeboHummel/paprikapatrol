@@ -83,7 +83,7 @@ trix-toolbar .trix-button--icon-code,
 
 ul li {
   list-style: disc;
-  margin-left: 1rem
+  margin-left: 1rem;
 }
 
 .trix-content li {
@@ -150,4 +150,8 @@ trix-editor ol {
 
 .notice .alert {
   background-color: red;
+}
+
+.table-button {
+  vertical-align: bottom;
 }

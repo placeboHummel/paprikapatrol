@@ -13,15 +13,14 @@
 - @recipe.each_slice(1) do |recipes|
   .columns
     - recipes.each do |recipe|
-      - if recipe.main_image.attached?
-        .column
-          .card
-            .card-image
-              %figure.image
-                %a{:href => "/#{recipe.id}"}
-                  = image_tag recipe.main_image.variant(resize_to_limit: [550, 550]) if recipe.main_image.attached?
-            .card-content
+      .column
+        .card
+          .card-image
+            %figure.image
               %a{:href => "/#{recipe.id}"}
-                %p.title.is-5= recipe.title
+                = image_tag recipe.main_image.variant(resize_to_limit: [550, 550]) if recipe.main_image.attached?
+          .card-content
+            %a{:href => "/#{recipe.id}"}
+              %p.title.is-5= recipe.title
 
 .flickr_pagination= will_paginate @recipe, previous_label: "«", next_label: "»"
