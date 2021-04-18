@@ -19,7 +19,7 @@
             .card-image
               %figure.image
                 %a{:href => "/#{recipe.id}"}
-                  = image_tag recipe.main_image.variant(resize_to_limit: [650, 650]) if recipe.main_image.attached?
+                  = image_tag recipe.main_image.variant(resize_to_limit: [450, 450]) if recipe.main_image.attached?
             .card-content.less-padding
               %a{:href => "/#{recipe.id}", :class => "has-text-dark"}
                 %p= recipe.title
