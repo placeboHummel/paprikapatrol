@@ -15,9 +15,7 @@
   %tbody
   - @recipe.each do |recipe|
     %tr
-      %td= image_tag recipe.main_image.variant(resize_to_limit: [150, 150]) if recipe.main_image.attached?
+      %td= image_tag recipe.main_image.variant(resize_to_limit: [350, 350]) if recipe.main_image.attached?
       %td
         %a{:href => "/#{recipe.id}/", :class => "has-text-dark"}
           %p= recipe.title
-        %br/
-        = link_to "#{fa_icon "pencil"}".html_safe, edit_recipe_path(recipe), class: "tag is-light is-small table-button"
