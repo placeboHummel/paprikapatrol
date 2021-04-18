@@ -1,5 +1,5 @@
 .container
-  = search_form_for @q, url: root_path do |f|
+  = search_form_for @q, url: recipe_index_path do |f|
     .field.has-addons
       .control.has-icons-left.is-expanded
         = f.search_field :title_cont, class: "input", placeholder: "Suche"
