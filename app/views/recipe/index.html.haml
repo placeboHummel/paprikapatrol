@@ -2,7 +2,7 @@
   = search_form_for @q, url: recipe_index_path do |f|
     .field.has-addons
       .control.has-icons-left.is-expanded
-        = f.search_field :title_cont, class: "input", placeholder: "Suche"
+        = f.search_field :title_or_action_text_rich_text_body_cont, class: "input", placeholder: "Suche"
         %span.icon.is-left
           %i.fa.fa-search
       .control
