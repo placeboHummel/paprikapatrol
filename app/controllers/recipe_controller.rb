@@ -1,5 +1,6 @@
 class RecipeController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
+
   def index
     @q = Recipe.ransack(params[:q])
     @recipe = @q.result(distinct: true).order("title ASC")

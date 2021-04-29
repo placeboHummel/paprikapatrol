@@ -1,5 +1,6 @@
 class DayController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index]
+
   def index
     @day = Day.all
     @momittag = Day.find_by(name: "Montag Mittag")
