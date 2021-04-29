@@ -1,7 +1,7 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
-  # Code is not reloaded between requests.
+  # Code is not reloaded between requests
   config.cache_classes = true
   config.hosts << "tasty-crumb.herokuapp.com"
 
