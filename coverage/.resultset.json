@@ -603,7 +603,7 @@
           null
         ]
       },
-      "/home/djalal/randomness/recipe-app/spec/controllers/recipe_controller_spec.rb": {
+      "/home/djalal/randomness/recipe-app/spec/controllers/day_controller_spec.rb": {
         "lines": [
           1,
           null,
@@ -708,6 +708,89 @@
           null
         ]
       },
+      "/home/djalal/randomness/recipe-app/app/controllers/day_controller.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          null,
+          1,
+          0,
+          null,
+          null
+        ]
+      },
+      "/home/djalal/randomness/recipe-app/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/home/djalal/randomness/recipe-app/spec/controllers/recipe_controller_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
       "/home/djalal/randomness/recipe-app/app/controllers/recipe_controller.rb": {
         "lines": [
           1,
@@ -763,34 +846,8 @@
           null,
           null
         ]
-      },
-      "/home/djalal/randomness/recipe-app/app/controllers/application_controller.rb": {
-        "lines": [
-          1,
-          1,
-          null
-        ]
-      },
-      "/home/djalal/randomness/recipe-app/spec/models/recipe_spec.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          1,
-          null
-        ]
-      },
-      "/home/djalal/randomness/recipe-app/app/models/recipe.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          1,
-          1,
-          null
-        ]
       }
     },
-    "timestamp": 1619959527
+    "timestamp": 1619959797
   }
 }
