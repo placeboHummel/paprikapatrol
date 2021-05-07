@@ -56,13 +56,13 @@ describe RecipeController do
       post :create, params: { recipe: { title: "Reis mit Pilzgulasch" } }
     end
 
-    it "redirects to the app view if persisting was successful" do
+    it "redirects to the recipe view if persisting was successful" do
       expect(@recipe).to receive(:save).and_return(true)
       post :create, params: { recipe: { title: "Reis mit Pilzgulasch" } }
       expect(response).to redirect_to("/#{@recipe.id}")
     end
 
-    it "renders app new view if persisting failed" do
+    it "renders recipe new view if persisting failed" do
       expect(@recipe).to receive(:save).and_return(false)
       post :create, params: { recipe: { title: "Reis mit Pilzgulasch" } }
       expect(response).to render_template(:new)
