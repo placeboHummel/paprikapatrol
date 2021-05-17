@@ -4,18 +4,17 @@ jobs:
   test:
     runs-on: ubuntu-latest
     services:
-      services:
-        db:
-          image: sqlite3
-          ports: ["5432:5432"]
-          options: >-
-            --health-interval 10s
-            --health-timeout 5s
-            --health-retries 5
-        redis:
-          image: redis
-          ports: ["6379:6379"]
-          options: --entrypoint redis-server
+      db:
+        image: sqlite3
+        ports: ["5432:5432"]
+        options: >-
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+      redis:
+        image: redis
+        ports: ["6379:6379"]
+        options: --entrypoint redis-server
 
     steps:
       - uses: actions/checkout@v1
