@@ -19,7 +19,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Setup Ruby
-        uses: actions/setip-ruby@v1
+        uses: actions/setup-ruby@v1
         with:
           ruby-version: 3.0.1
       - uses: borales/actions-yarn@v2.0.0
