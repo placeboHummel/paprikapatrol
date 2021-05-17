@@ -81,7 +81,7 @@ describe RecipeController do
     it "deletes @recipe" do
       expect(@recipe).to receive(:destroy)
       get :delete, params: { id: "" }
-      expect(response).to redirect_to(recipe_index_path)
+      expect(response).to redirect_to(day_index_path)
     end
   end
 end
