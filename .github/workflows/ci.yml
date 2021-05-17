@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     services:
       db:
-        image: sqlite3
+        image: nouchka/sqlite3
         ports: ["5432:5432"]
         options: >-
           --health-interval 10s
