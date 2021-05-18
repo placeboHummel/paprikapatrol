@@ -16,17 +16,16 @@ jobs:
         uses: actions/setup-ruby@v1
         with:
           ruby-version: 3.0.1
-          bundler-cache: true
-
-      - name: Install gems
-        run: |
-          gem install bundler
-          bundle install --jobs 4 --retry 3
 
       - name: Use yarn and install packages
         uses: borales/actions-yarn@v2.0.0
         with:
           cmd: install
+
+      - name: Install gems
+        run: |
+          gem install bundler
+          bundle install --jobs 4 --retry 3
 
       - name: Set up database
         env:
@@ -36,7 +35,6 @@ jobs:
 
       - name: Run unit-tests
         run: |
-          yarn
           bundle exec rspec
 
       - name: Setup chromedriver
