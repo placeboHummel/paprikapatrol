@@ -13,7 +13,7 @@ jobs:
         image: nouchka/sqlite3
 
     steps:
-      - name: ⇒ Check-out repository
+      - name: Check-out repository
         uses: actions/checkout@v2
 
       - name: ⇒ Install node modules
