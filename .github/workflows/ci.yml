@@ -26,7 +26,7 @@ jobs:
       - name: Use yarn and install packages
         uses: borales/actions-yarn@v2.0.0
         with:
-          cmd: yarn install --check-files
+          cmd: install
 
       - name: Set up database
         env:
@@ -36,6 +36,7 @@ jobs:
 
       - name: Run unit-tests
         run: |
+          yarn install --check-files
           bundle exec rspec
 
       - name: Setup chromedriver
