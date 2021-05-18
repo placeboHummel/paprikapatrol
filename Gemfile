@@ -18,6 +18,7 @@ gem "devise-bulma-views", github: "thecodechef/devise-bulma-views"
 gem "haml"
 gem "bootsnap", ">= 1.4.2", require: false
 gem "rexml"
+gem "aws-sdk-s3"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
