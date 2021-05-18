@@ -61,11 +61,8 @@ jobs:
         run: |
           bundle exec rails db:prepare
 
-      - uses: nanasess/setup-chromedriver@master
-      - run: |
-          export DISPLAY=:99
-          chromedriver --url-base=/wd/hub &
-          sudo Xvfb -ac :99 -screen 0 1920x1080 > /dev/null 2>&1 & # optional
+      - name: ⇒ Setup Chrome Driver
+        uses: nanasess/setup-chromedriver@master
 
       - name: ⇒ Run integration-tests
         run: |
