@@ -1,34 +1,42 @@
-env:
-  REDIS_URL: redis://localhost:6479/0
-  RAILS_ENV: test
-  RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY }}
-
 name: Continuous Integration
 on: [push, pull_request]
 jobs:
-  test:
+  rspec-test:
+    name: RSpec
     runs-on: ubuntu-latest
     services:
       db:
         image: nouchka/sqlite3
-        ports: ["5432:5432"]
-      redis:
-        image: redis
-        ports: ["6379:6379"]
-        options: --entrypoint redis-server
 
     steps:
-      - uses: actions/checkout@v1
-      - name: Setup Ruby
+      -name: Check-out repository
+      - uses: actions/checkout@v2
+
+      - name: Setup Ruby and install gems
         uses: actions/setup-ruby@v1
         with:
           ruby-version: 3.0.1
-      - uses: borales/actions-yarn@v2.0.0
-        with:
-          cmd: install
-      - name: Build and run tests
+          bundler-cache: true
         run: |
           gem install bundler
           bundle install --jobs 4 --retry 3
+      
+      - name: Use yarn and install packages
+        uses: borales/actions-yarn@v2.0.0
+        with:
+          cmd: install
+
+      - name: Set up database
+        env:
+          RAILS_ENV: test
+        run: |
           bundle exec rails db:prepare
+
+      - name: Run unit-tests
+        run: |
           bundle exec rspec
+
+      - name: Run integration-tests
+        uses: nanasess/setup-chromedriver@v1.0.1
+        run: |
+          bundle exec rspec spec/features/*
