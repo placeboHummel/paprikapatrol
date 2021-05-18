@@ -16,6 +16,11 @@ jobs:
       - name: ⇒ Check-out repository
         uses: actions/checkout@v2
 
+      - name: ⇒ Install node modules
+        uses: borales/actions-yarn@v2.0.0
+        with:
+          cmd: install
+
       - name: ⇒ Setup Ruby 3.0.1
         uses: ruby/setup-ruby@v1
         with:
@@ -40,6 +45,11 @@ jobs:
     steps:
       - name: ⇒ Check-out repository
         uses: actions/checkout@v2
+
+      - name: ⇒ Install node modules
+        uses: borales/actions-yarn@v2.0.0
+        with:
+          cmd: install
 
       - name: ⇒ Setup Ruby 3.0.1
         uses: ruby/setup-ruby@v1
