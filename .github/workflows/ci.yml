@@ -5,8 +5,8 @@ env:
 name: Application Build & Test
 on: [push, pull_request]
 jobs:
-  rspec-test:
-    name: RSpec
+  unit-test:
+    name: Unit tests
     runs-on: ubuntu-latest
     services:
       db:
@@ -34,6 +34,32 @@ jobs:
       - name: Run unit-tests
         run: |
           bundle exec rspec
+
+  integration-test:
+    name: Integration tests
+    runs-on: ubuntu-latest
+    services:
+      db:
+        image: nouchka/sqlite3
+
+    steps:
+      - name: Check-out repository
+        uses: actions/checkout@v2
+
+      - name: Install node modules
+        uses: borales/actions-yarn@v2.0.0
+        with:
+          cmd: install
+
+      - name: Setup Ruby 3.0.1
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.0.1
+          bundler-cache: true
+
+      - name: Setup database
+        run: |
+          bundle exec rails db:prepare
 
       - uses: nanasess/setup-chromedriver@master
       - run: |
