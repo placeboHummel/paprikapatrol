@@ -38,7 +38,9 @@ jobs:
         run: |
           bundle exec rspec
 
+      - name: Setup chromedriver
+        uses: nanasess/setup-chromedriver@master
+
       - name: Run integration-tests
-        uses: nanasess/setup-chromedriver@v1.0.1
         run: |
           bundle exec rspec spec/features/*
