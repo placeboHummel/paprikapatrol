@@ -1,5 +1,4 @@
 env:
-  RAILS_ENV: test
   RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY }}
 
 name: Application Build & Test
