@@ -11,6 +11,8 @@ require "capybara/rspec"
 require "selenium/webdriver"
 require "webdrivers/chromedriver"
 
+Capybara.server = :puma
+
 Webdrivers::Chromedriver.required_version = "90.0.4430.24"
 
 Capybara.server = :puma, { Silent: true }
