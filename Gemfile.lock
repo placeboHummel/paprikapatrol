@@ -273,7 +273,7 @@ DEPENDENCIES
   awesome_print
   bootsnap (>= 1.4.2)
   byebug
-  capybara (>= 2.15)
+  capybara (~> 3.34)
   devise
   devise-bulma-views!
   font-awesome-rails
