@@ -16,7 +16,7 @@ RSpec.describe "root path", type: :system do
       within "#recipe_search" do
         find(".input").set("Reis").native.send_keys(:return)
       end
-      expect(page).to have_text("Reisnudelsalat mit gebackenem Tofuu")
+      expect(page).to have_text("Reisnudelsalat mit gebackenem Tofu")
     end
   end
 end
