@@ -9,7 +9,24 @@ require "rspec/rails"
 require "capybara/rails"
 require "capybara/rspec"
 
-Capybara.javascript_driver = :selenium_chrome_headless
+Capybara.register_driver :chrome do |app|
+  Capybara::Selenium::Driver.new(app, browser: :chrome)
+end
+
+Capybara.register_driver :headless_chrome do |app|
+  capabilities = Selenium::WebDriver::Remote::Capabilities.chrome(
+    chromeOptions: {
+      args: %w[headless no-sandbox enable-features=NetworkService,NetworkServiceInProcess],
+    },
+  )
+
+  Capybara::Selenium::Driver.new app,
+    browser: :chrome,
+    desired_capabilities: capabilities
+end
+
+Capybara.default_driver = :headless_chrome
+Capybara.javascript_driver = :headless_chrome
 
 # Add additional requires below this line. Rails is not loaded until this point!
 
