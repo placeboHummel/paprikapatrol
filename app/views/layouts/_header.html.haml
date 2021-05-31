@@ -17,10 +17,10 @@
           = link_to '<i class="fa fa-calendar-alt"></i>⠀Wochenplan'.html_safe, day_index_path, class: "navbar-item"
           - if !user_signed_in?
             = link_to '<i class="fas fa-sign-in-alt"></i>⠀Login'.html_safe, new_user_session_path, class: "navbar-item"
-          %hr
           - if user_signed_in?
             = link_to '<i class="fa fa-plus"></i>⠀Neues Rezept'.html_safe, recipe_new_path, class: "navbar-item"
           - if !@q.blank?
+            %hr
             = search_form_for @q, url: root_path do |f|
               .control.navbar-item
                 = f.search_field :title_or_action_text_rich_text_body_cont, class: "input", placeholder: "🔍 Suche"
