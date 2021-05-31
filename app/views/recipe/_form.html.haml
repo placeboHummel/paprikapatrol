@@ -1,3 +1,5 @@
+%link{:href => "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css", :rel => "stylesheet"}
+
 = form_with model: @recipe, url: url do |form|
   %div.field
     %label.label Titel
@@ -13,8 +15,7 @@
       = form.file_field :main_image
 
   - if @recipe.id.present?
-    %div.field
-      .button.is-danger.alignright= link_to "#{fa_icon "trash"}".html_safe, recipe_delete_path(@recipe), method: :delete, style: "color:#FFFFFF", data: { confirm: "Willst du '#{@recipe.title}' wirklich löschen?" }
+    = link_to '<i class="fas fa-trash"></i>'.html_safe, recipe_delete_path(@recipe), method: :delete, class: "button is-danger alignright", data: { confirm: "Willst du '#{@recipe.title}' wirklich löschen?" }
 
   %div.control
     %br

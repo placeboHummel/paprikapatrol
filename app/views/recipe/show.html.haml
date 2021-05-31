@@ -6,7 +6,7 @@
   %br
   .container
     - if user_signed_in?
-      %a.button.is-info.is-small.is-light.alignright{:href => "/#{@recipe.id}/edit"}
+      %a.button.is-small.is-light.alignright{:href => "/#{@recipe.id}/edit"}
         = fa_icon "pencil"
     %h2.title.is-4= @recipe.title
     %p= @recipe.description
