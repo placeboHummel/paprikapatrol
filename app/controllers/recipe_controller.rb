@@ -14,7 +14,7 @@ class RecipeController < ApplicationController
     @recipe = Recipe.new(recipe_params)
 
     if @recipe.save
-      redirect_to "/#{@recipe.id}", notice: "#{@recipe.title.titleize} wurde erstellt."
+      redirect_to "/#{@recipe.id}"
     else
       render "new"
     end

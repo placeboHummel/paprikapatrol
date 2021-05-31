@@ -1,5 +1,20 @@
-%nav.navbar{"aria-label" => "main navigation", :role => "navigation"}
+%link{:href => "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css", :rel => "stylesheet"}
+
+%nav.navbar
   .navbar-brand
-    = link_to image_tag("plantbased_favicon.png", size: "50x50") + " ", root_path, style: "margin-right: 1rem"
-    = link_to image_tag("chef.png") + " ⠀Alle", recipe_index_path, class: "navbar-item level-right"
-    = link_to image_tag("calendar.png") + " ⠀Wochenplan", day_index_path, class: "navbar-item"
+    = link_to "Paprika Patrol", root_path, class: "mobile-header", id: "title logo"
+    .navbar-burger.burger{"data-target" => "navbarExampleTransparentExample"}
+      %span
+      %span
+      %span
+  #navbarExampleTransparentExample.navbar-menu
+    .navbar-start
+    .navbar-end
+      .navbar-item.has-dropdown.is-hoverable
+        = link_to "Home", root_path, class: "navbar-link"
+        .navbar-dropdown.is-boxed
+          = link_to '<i class="fa fa-book"></i>⠀Alle Rezepte'.html_safe, recipe_index_path, class: "navbar-item"
+          = link_to '<i class="fa fa-calendar-alt"></i>⠀Wochenplan'.html_safe, day_index_path, class: "navbar-item"
+          = link_to '<i class="fa fa-search"></i>⠀Suchen'.html_safe, day_index_path, class: "navbar-item"
+          %hr.navbar-divider
+          = link_to '<i class="fa fa-plus"></i>⠀Neues Rezept'.html_safe, recipe_new_path, class: "navbar-item"
