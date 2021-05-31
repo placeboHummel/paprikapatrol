@@ -2,7 +2,7 @@
 
 %nav.navbar
   .navbar-brand
-    = link_to "Paprika Patrol", root_path, class: "mobile-header", id: "title logo"
+    = link_to "PAprika PAtrol", root_path, class: "mobile-header", id: "title logo"
     .navbar-burger.burger{"data-target" => "navbarExampleTransparentExample"}
       %span
       %span
@@ -15,6 +15,12 @@
         .navbar-dropdown.is-boxed
           = link_to '<i class="fa fa-book"></i>⠀Alle Rezepte'.html_safe, recipe_index_path, class: "navbar-item"
           = link_to '<i class="fa fa-calendar-alt"></i>⠀Wochenplan'.html_safe, day_index_path, class: "navbar-item"
-          = link_to '<i class="fa fa-search"></i>⠀Suchen'.html_safe, day_index_path, class: "navbar-item"
-          %hr.navbar-divider
-          = link_to '<i class="fa fa-plus"></i>⠀Neues Rezept'.html_safe, recipe_new_path, class: "navbar-item"
+          - if !user_signed_in?
+            = link_to '<i class="fas fa-sign-in-alt"></i>⠀Login'.html_safe, new_user_session_path, class: "navbar-item"
+          %hr
+          - if user_signed_in?
+            = link_to '<i class="fa fa-plus"></i>⠀Neues Rezept'.html_safe, recipe_new_path, class: "navbar-item"
+          - if !@q.blank?
+            = search_form_for @q, url: root_path do |f|
+              .control.navbar-item
+                = f.search_field :title_or_action_text_rich_text_body_cont, class: "input", placeholder: "🔍 Suche"

@@ -1,15 +1,3 @@
-%link{:href => "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css", :rel => "stylesheet"}
-.container
-  = search_form_for @q, url: root_path do |f|
-    .field.has-addons
-      .control.has-icons-left.is-expanded
-        = f.search_field :title_or_action_text_rich_text_body_cont, class: "input", placeholder: "Suche"
-        %span.icon.is-left
-          %i.fa.fa-search
-      .control
-        %a.button.is-light.gridbutton{:href => "/home/grid"}
-          = fa_icon "square"
-%br
 - @recipe.each_slice(2) do |recipes|
   .columns.is-mobile.is-variable.is-1
     - recipes.each do |recipe|

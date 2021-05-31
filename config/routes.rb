@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: "home#index"
-  get "/home/grid", to: "home#gridview", as: :grid_view
 
   get "/day", to: "day#index", as: :day_index
   get "/day/new", to: "day#new", as: :day_new

@@ -11,8 +11,9 @@
         .title.is-5 Nicht geplant
       %nav.level.is-mobile
         .level-left
-          %a.level-item.button.is-small.is-light{:href => "/day/#{@momittag.id}/edit"}
-            = fa_icon "pencil-square-o"
+          - if user_signed_in?
+            %a.level-item.button.is-small.is-light{:href => "/day/#{@momittag.id}/edit"}
+              = fa_icon "pencil-square-o"
           - if @momittag.recipe_id.present?
             %a.level-item.button.is-small.is-light{:href => "/#{@momittag.recipe_id}/"}
               = fa_icon "cutlery", text: "⠀Zum Rezept"
@@ -27,12 +28,12 @@
         .title.is-5 Nicht geplant
       %nav.level.is-mobile
         .level-left
-          %a.level-item.button.is-small.is-light{:href => "/day/#{@moabend.id}/edit"}
-            = fa_icon "pencil-square-o"
+          - if user_signed_in?
+            %a.level-item.button.is-small.is-light{:href => "/day/#{@moabend.id}/edit"}
+              = fa_icon "pencil-square-o"
           - if @moabend.recipe_id.present?
             %a.level-item.button.is-small.is-light{:href => "/#{@moabend.recipe_id}/"}
               = fa_icon "cutlery", text: "⠀Zum Rezept"
-%hr
 .title.is-4 Dienstag
 .box
   %article.media
@@ -46,8 +47,9 @@
         .title.is-5 Nicht geplant
       %nav.level.is-mobile
         .level-left
-          %a.level-item.button.is-small.is-light{:href => "/day/#{@dimittag.id}/edit"}
-            = fa_icon "pencil-square-o"
+          - if user_signed_in?
+            %a.level-item.button.is-small.is-light{:href => "/day/#{@dimittag.id}/edit"}
+              = fa_icon "pencil-square-o"
           - if @dimittag.recipe_id.present?
             %a.level-item.button.is-small.is-light{:href => "/#{@dimittag.recipe_id}/"}
               = fa_icon "cutlery", text: "⠀Zum Rezept"
@@ -62,12 +64,12 @@
         .title.is-5 Nicht geplant
       %nav.level.is-mobile
         .level-left
-          %a.level-item.button.is-small.is-light{:href => "/day/#{@diabend.id}/edit"}
-            = fa_icon "pencil-square-o"
+          - if user_signed_in?
+            %a.level-item.button.is-small.is-light{:href => "/day/#{@diabend.id}/edit"}
+              = fa_icon "pencil-square-o"
           - if @diabend.recipe_id.present?
             %a.level-item.button.is-small.is-light{:href => "/#{@diabend.recipe_id}/"}
               = fa_icon "cutlery", text: "⠀Zum Rezept"
-%hr
 .title.is-4 Mittwoch
 .box
   %article.media
@@ -81,8 +83,9 @@
         .title.is-5 Nicht geplant
       %nav.level.is-mobile
         .level-left
-          %a.level-item.button.is-small.is-light{:href => "/day/#{@mimittag.id}/edit"}
-            = fa_icon "pencil-square-o"
+          - if user_signed_in?
+            %a.level-item.button.is-small.is-light{:href => "/day/#{@mimittag.id}/edit"}
+              = fa_icon "pencil-square-o"
           - if @mimittag.recipe_id.present?
             %a.level-item.button.is-small.is-light{:href => "/#{@mimittag.recipe_id}/"}
               = fa_icon "cutlery", text: "⠀Zum Rezept"
@@ -97,12 +100,12 @@
         .title.is-5 Nicht geplant
       %nav.level.is-mobile
         .level-left
-          %a.level-item.button.is-small.is-light{:href => "/day/#{@miabend.id}/edit"}
-            = fa_icon "pencil-square-o"
+          - if user_signed_in?
+            %a.level-item.button.is-small.is-light{:href => "/day/#{@miabend.id}/edit"}
+              = fa_icon "pencil-square-o"
           - if @miabend.recipe_id.present?
             %a.level-item.button.is-small.is-light{:href => "/#{@miabend.recipe_id}/"}
               = fa_icon "cutlery", text: "⠀Zum Rezept"
-%hr
 .title.is-4 Donnerstag
 .box
   %article.media
@@ -116,8 +119,9 @@
         .title.is-5 Nicht geplant
       %nav.level.is-mobile
         .level-left
-          %a.level-item.button.is-small.is-light{:href => "/day/#{@domittag.id}/edit"}
-            = fa_icon "pencil-square-o"
+          - if user_signed_in?
+            %a.level-item.button.is-small.is-light{:href => "/day/#{@domittag.id}/edit"}
+              = fa_icon "pencil-square-o"
           - if @domittag.recipe_id.present?
             %a.level-item.button.is-small.is-light{:href => "/#{@domittag.recipe_id}/"}
               = fa_icon "cutlery", text: "⠀Zum Rezept"
@@ -132,12 +136,12 @@
         .title.is-5 Nicht geplant
       %nav.level.is-mobile
         .level-left
-          %a.level-item.button.is-small.is-light{:href => "/day/#{@doabend.id}/edit"}
-            = fa_icon "pencil-square-o"
+          - if user_signed_in?
+            %a.level-item.button.is-small.is-light{:href => "/day/#{@doabend.id}/edit"}
+              = fa_icon "pencil-square-o"
           - if @doabend.recipe_id.present?
             %a.level-item.button.is-small.is-light{:href => "/#{@doabend.recipe_id}/"}
               = fa_icon "cutlery", text: "⠀Zum Rezept"
-%hr
 .title.is-4 Freitag
 .box
   %article.media
@@ -151,8 +155,9 @@
         .title.is-5 Nicht geplant
       %nav.level.is-mobile
         .level-left
-          %a.level-item.button.is-small.is-light{:href => "/day/#{@frmittag.id}/edit"}
-            = fa_icon "pencil-square-o"
+          - if user_signed_in?
+            %a.level-item.button.is-small.is-light{:href => "/day/#{@frmittag.id}/edit"}
+              = fa_icon "pencil-square-o"
           - if @frmittag.recipe_id.present?
             %a.level-item.button.is-small.is-light{:href => "/#{@frmittag.recipe_id}/"}
               = fa_icon "cutlery", text: "⠀Zum Rezept"
@@ -167,12 +172,12 @@
         .title.is-5 Nicht geplant
       %nav.level.is-mobile
         .level-left
-          %a.level-item.button.is-small.is-light{:href => "/day/#{@frabend.id}/edit"}
-            = fa_icon "pencil-square-o"
+          - if user_signed_in?
+            %a.level-item.button.is-small.is-light{:href => "/day/#{@frabend.id}/edit"}
+              = fa_icon "pencil-square-o"
           - if @frabend.recipe_id.present?
             %a.level-item.button.is-small.is-light{:href => "/#{@frabend.recipe_id}/"}
               = fa_icon "cutlery", text: "⠀Zum Rezept"
-%hr
 .title.is-4 Samstag
 .box
   %article.media
@@ -186,8 +191,9 @@
         .title.is-5 Nicht geplant
       %nav.level.is-mobile
         .level-left
-          %a.level-item.button.is-small.is-light{:href => "/day/#{@samittag.id}/edit"}
-            = fa_icon "pencil-square-o"
+          - if user_signed_in?
+            %a.level-item.button.is-small.is-light{:href => "/day/#{@samittag.id}/edit"}
+              = fa_icon "pencil-square-o"
           - if @samittag.recipe_id.present?
             %a.level-item.button.is-small.is-light{:href => "/#{@samittag.recipe_id}/"}
               = fa_icon "cutlery", text: "⠀Zum Rezept"
@@ -202,12 +208,12 @@
         .title.is-5 Nicht geplant
       %nav.level.is-mobile
         .level-left
-          %a.level-item.button.is-small.is-light{:href => "/day/#{@saabend.id}/edit"}
-            = fa_icon "pencil-square-o"
+          - if user_signed_in?
+            %a.level-item.button.is-small.is-light{:href => "/day/#{@saabend.id}/edit"}
+              = fa_icon "pencil-square-o"
           - if @saabend.recipe_id.present?
             %a.level-item.button.is-small.is-light{:href => "/#{@saabend.recipe_id}/"}
               = fa_icon "cutlery", text: "⠀Zum Rezept"
-%hr
 .title.is-4 Sonntag
 .box
   %article.media
@@ -221,8 +227,9 @@
         .title.is-5 Nicht geplant
       %nav.level.is-mobile
         .level-left
-          %a.level-item.button.is-small.is-light{:href => "/day/#{@somittag.id}/edit"}
-            = fa_icon "pencil-square-o"
+          - if user_signed_in?
+            %a.level-item.button.is-small.is-light{:href => "/day/#{@somittag.id}/edit"}
+              = fa_icon "pencil-square-o"
           - if @somittag.recipe_id.present?
             %a.level-item.button.is-small.is-light{:href => "/#{@somittag.recipe_id}/"}
               = fa_icon "cutlery", text: "⠀Zum Rezept"
@@ -237,8 +244,9 @@
         .title.is-5 Nicht geplant
       %nav.level.is-mobile
         .level-left
-          %a.level-item.button.is-small.is-light{:href => "/day/#{@soabend.id}/edit"}
-            = fa_icon "pencil-square-o"
+          - if user_signed_in?
+            %a.level-item.button.is-small.is-light{:href => "/day/#{@soabend.id}/edit"}
+              = fa_icon "pencil-square-o"
           - if @soabend.recipe_id.present?
             %a.level-item.button.is-small.is-light{:href => "/#{@soabend.recipe_id}/"}
               = fa_icon "cutlery", text: "⠀Zum Rezept"

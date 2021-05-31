@@ -23,13 +23,14 @@ body {
   max-width: 800px;
   margin: 0 auto !important;
   float: none !important;
+  font-family: "Raleway", sans-serif;
 }
 
 .yield {
-  margin-top: 0.5rem;
   margin-left: 0.8rem;
   margin-right: 0.8rem;
   margin-bottom: 2rem;
+  margin-top: 2rem;
 }
 
 .gridbutton {
@@ -45,7 +46,24 @@ body {
 }
 
 .navbar-burger {
-  height: 5.3rem;
+  margin-top: 14px;
+}
+
+.navbar-item.has-dropdown {
+  margin-top: 15px;
+}
+
+hr {
+  margin: 1rem;
+  border: 0;
+  height: 1px;
+  background: #333;
+  background-image: linear-gradient(to right, #ccc, #333, #ccc);
+}
+
+.table td,
+.table th {
+  padding-left: 0rem;
 }
 
 @media screen and (min-width: 1024px) {
@@ -65,9 +83,8 @@ body {
 .mobile-header {
   padding-top: 20px;
   padding-left: 10px;
-  padding-bottom: 10px;
-  font-family: "Limelight";
-  font-size: 30px;
+  font-family: "Major Mono Display", monospace;
+  font-size: 27px;
   color: black;
 }
 

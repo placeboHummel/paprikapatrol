@@ -1,20 +1,23 @@
 !!!
 %html
   %head
-    %title Tasty Crumble
+    %title Paprika Patrol
     = csrf_meta_tags
     = csp_meta_tag
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
     %link{:href => "https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css", :rel => "stylesheet"}
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
-    %link{:href => "https://i.imgur.com/23BVduE.png", :rel => "apple-touch-icon", :sizes => "128x128"}
+    %link{:href => "https://i.imgur.com/TA4iHWt.png", :rel => "apple-touch-icon", :sizes => "128x128"}
     %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}
-    = favicon_link_tag asset_path('plantbased_favicon.png')
+    = favicon_link_tag asset_path('paprika.png')
     = javascript_include_tag "header"
     %meta{:content => "reload", :name => "turbolinks-visit-control"}
     
     %link{:href => "https://fonts.gstatic.com", :rel => "preconnect"}/
-    %link{:href => "https://fonts.googleapis.com/css2?family=Limelight&display=swap", :rel => "stylesheet"}
+    %link{:href => "https://fonts.googleapis.com/css2?family=Raleway:wght@400&display=swap", :rel => "stylesheet"}
+
+    %link{:href => "https://fonts.gstatic.com", :rel => "preconnect"}/
+    %link{:href => "https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Spartan:wght@200&display=swap", :rel => "stylesheet"}
 
   %body
     %div.header

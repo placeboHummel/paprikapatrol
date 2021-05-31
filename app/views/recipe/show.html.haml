@@ -5,7 +5,8 @@
         %img= image_tag @recipe.main_image.variant(resize_to_limit: [700, 550]) if @recipe.main_image.attached?
   %br
   .container
-    %a.button.is-info.is-small.is-light.alignright{:href => "/#{@recipe.id}/edit"}
-      = fa_icon "pencil"
+    - if user_signed_in?
+      %a.button.is-info.is-small.is-light.alignright{:href => "/#{@recipe.id}/edit"}
+        = fa_icon "pencil"
     %h2.title.is-4= @recipe.title
     %p= @recipe.description
