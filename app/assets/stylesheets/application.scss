@@ -46,11 +46,12 @@ body {
 }
 
 .navbar-burger {
-  margin-top: 14px;
+  margin-top: 16px;
 }
 
 .navbar-item.has-dropdown {
-  margin-top: 15px;
+  margin-top: 20px;
+  $input-arrow: black;
 }
 
 hr {
@@ -175,14 +176,15 @@ trix-editor ol {
 .flickr_pagination .current {
   font-style: normal;
   font-weight: bold;
-  color: #01c4a7;
+  color: black;
 }
 .flickr_pagination a {
   text-decoration: none;
+  color: grey;
 }
 .flickr_pagination a:hover,
 .flickr_pagination a:focus {
-  background: #01c4a7;
+  background: gray;
   color: white;
 }
 .flickr_pagination .page_info {
