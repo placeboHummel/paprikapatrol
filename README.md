@@ -6,19 +6,14 @@
     <img src="https://i.imgur.com/fy883fL.png" alt="Logo">
   </a>
 
-  <h3 align="center">Paprika Patrol</h3>
-
   <p align="center">
-    An awesome README template to jumpstart your projects!
+    An ruby on rails application for managing recipes and meal plans.
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
-    <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
+    <a href="https://paprikapatrol.de">View Demo</a>
     ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Report Bug</a>
+    <a href="https://github.com/placeboHummel/paprikapatrol/issues">Report Bug</a>
     ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Request Feature</a>
+    <a href="https://github.com/placeboHummel/paprikapatrol/issues">Request Feature</a>
   </p>
 </p>
 
