@@ -3,10 +3,10 @@
 <br />
 <p align="center">
   <a href="https://paprikapatrol.de">
-    <img src="https://github.com/placeboHummel/paprikapatrol/blob/main/app/assets/images/favicon.png?raw=true" alt="Logo" width="80" height="80">
+    <img src="https://i.imgur.com/fy883fL.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">Best-README-Template</h3>
+  <h3 align="center">Paprika Patrol</h3>
 
   <p align="center">
     An awesome README template to jumpstart your projects!
