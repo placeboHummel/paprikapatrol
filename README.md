@@ -3,7 +3,7 @@
 <br />
 <p align="center">
   <a href="https://paprikapatrol.de">
-    <img src="https://i.imgur.com/fy883fL.png" alt="Logo" width="80" height="80">
+    <img src="https://i.imgur.com/fy883fL.png" alt="Logo">
   </a>
 
   <h3 align="center">Paprika Patrol</h3>
