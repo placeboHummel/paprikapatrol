@@ -1,7 +1,7 @@
 = form_with model: @day, url: url do |form|
   %div.field
-    .select.is-fullwidth= form.collection_select :recipe_id, Recipe.order("updated_at DESC").all, :id, :title, include_blank: "Nicht geplant"
+    .select.is-fullwidth.is-black= form.collection_select :recipe_id, Recipe.order("updated_at DESC").all, :id, :title, include_blank: "Nicht geplant", class: "selectize"
 
   %div.control
     %br
-    %input.button.is-link.is-fullwidth{:type => "submit", :value => "Speichern"}
+    %input.button.is-light.is-fullwidth{:type => "submit", :value => "Speichern"}

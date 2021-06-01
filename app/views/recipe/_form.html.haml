@@ -15,8 +15,7 @@
       = form.file_field :main_image
 
   - if @recipe.id.present?
-    = link_to '<i class="fas fa-trash"></i>'.html_safe, recipe_delete_path(@recipe), method: :delete, class: "button is-danger alignright", data: { confirm: "Willst du '#{@recipe.title}' wirklich löschen?" }
+    = link_to '<i class="fas fa-trash"></i>'.html_safe, recipe_delete_path(@recipe), method: :delete, class: "button is-light alignright", data: { confirm: "'#{@recipe.title}' wirklich löschen?" }
 
   %div.control
-    %br
-    %input.button.is-link.is-fullwidth{:type => "submit", :value => "Speichern"}
+    %input.button.is-success.is-fullwidth{:type => "submit", :value => "Speichern", :style => "margin-top: 4rem;"}
