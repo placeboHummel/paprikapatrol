@@ -19,6 +19,9 @@ gem "haml"
 gem "bootsnap", ">= 1.4.2", require: false
 gem "rexml"
 gem "aws-sdk-s3"
+gem "ahoy_matey"
+gem "groupdate"
+gem "chartkick"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]

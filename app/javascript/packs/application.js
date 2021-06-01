@@ -9,6 +9,8 @@ require("@rails/activestorage").start();
 require("channels");
 require("jQuery");
 
+import ahoy from "ahoy.js";
+import "chartkick/chart.js";
 import "@fortawesome/fontawesome-free/css/all.css";
 
 // Uncomment to copy all static images under ../images to the output folder and reference
