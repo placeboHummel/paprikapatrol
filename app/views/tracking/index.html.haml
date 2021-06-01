@@ -1,0 +1,4 @@
+.title.is-5 Besucher
+= line_chart Ahoy::Visit.group_by_day(:started_at).count
+.title.is-5 Klicks
+= line_chart Ahoy::Event.group_by_day(:time).count

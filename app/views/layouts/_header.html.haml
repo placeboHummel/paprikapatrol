@@ -18,7 +18,8 @@
           - if !user_signed_in?
             = link_to '<i class="fas fa-sign-in-alt"></i>⠀Login'.html_safe, new_user_session_path, class: "navbar-item"
           - if user_signed_in?
-            = link_to '<i class="fa fa-plus"></i>⠀Neues Rezept'.html_safe, recipe_new_path, class: "navbar-item"
+            = link_to '<i class="far fa-chart-bar"></i>⠀Tracking'.html_safe, tracking_index_path, class: "navbar-item"
+            = link_to '<i class="fa fa-plus"></i>⠀ Neues Rezept'.html_safe, recipe_new_path, class: "navbar-item"
           - if !@q.blank?
             %hr
             = search_form_for @q, url: root_path do |f|
