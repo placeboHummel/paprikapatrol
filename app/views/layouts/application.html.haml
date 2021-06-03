@@ -5,8 +5,11 @@
     = csrf_meta_tags
     = csp_meta_tag
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+    %script(src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.13.3/js/standalone/selectize.min.js")
+    %link{:href => "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css", :rel => "stylesheet"}
     %link{:href => "https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css", :rel => "stylesheet"}
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = stylesheet_link_tag 'selectize', media: 'all', 'data-turbolinks-track': 'reload'
     %link{:href => "https://i.imgur.com/69PgdtI.png", :rel => "apple-touch-icon", :sizes => "128x128"}
     %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}
     = favicon_link_tag asset_path('favicon.png')

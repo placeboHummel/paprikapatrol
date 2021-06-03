@@ -14,7 +14,10 @@ class RecipeController < ApplicationController
     @recipe = Recipe.new(recipe_params)
 
     if @recipe.save
-      redirect_to "/#{@recipe.id}"
+      respond_to do |format|
+        format.html { redirect_to("/#{@recipe.id}") }
+        format.js { render :json => { id: @recipe.id, title: @recipe.title } }
+      end
     else
       render "new"
     end

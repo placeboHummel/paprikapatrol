@@ -1,252 +1,35 @@
-.title.is-4 Montag
-.box
-  %article.media
-    .media-left
-      %figure.image.is-64x64
-        %img= image_tag "sun.png"
-    .media-content
-      - if @momittag.recipe_id.present?
-        .title.is-5= Recipe.find_by(id: @momittag.recipe_id).title if Recipe.find_by(id: @momittag.recipe_id).present?
-      - else
-        .title.is-5 Nicht geplant
-      %nav.level.is-mobile
-        .level-left
-          - if user_signed_in?
-            %a.level-item.button.is-small.is-light{:href => "/day/#{@momittag.id}/edit"}
+- @day.each_slice(2) do |mittag, abend| 
+  .box
+    .title.is-4= mittag.name[/(.*)\s/,1]
+    %article.media
+      .media-left
+        %figure.image.is-64x64
+          %img= image_tag "sun.png"
+      .media-content
+        - if mittag.recipe_id.present?
+          .title.is-5= Recipe.find_by(id: mittag.recipe_id).title if Recipe.find_by(id: mittag.recipe_id).present?
+        - else
+          .title.is-5 Nicht geplant
+        %nav.level.is-mobile
+          .level-left
+            %a.level-item.button.is-small.is-light{:href => "/day/#{mittag.id}/edit"}
               = fa_icon "pencil-square-o"
-          - if @momittag.recipe_id.present?
-            %a.level-item.button.is-small.is-light{:href => "/#{@momittag.recipe_id}/"}
-              = fa_icon "cutlery", text: "⠀Zum Rezept"
-  %article.media
-    .media-left
-      %figure.image.is-64x64
-        %img= image_tag "cloudy-night.png"
-    .media-content
-      - if @moabend.recipe_id.present?
-        .title.is-5= Recipe.find_by(id: @moabend.recipe_id).title if Recipe.find_by(id: @moabend.recipe_id).present?
-      - else
-        .title.is-5 Nicht geplant
-      %nav.level.is-mobile
-        .level-left
-          - if user_signed_in?
-            %a.level-item.button.is-small.is-light{:href => "/day/#{@moabend.id}/edit"}
+            - if mittag.recipe_id.present?
+              %a.level-item.button.is-small.is-light{:href => "/#{mittag.recipe_id}/"}
+                = fa_icon "cutlery", text: "⠀Zum Rezept"
+    %article.media
+      .media-left
+        %figure.image.is-64x64
+          %img= image_tag "cloudy-night.png"
+      .media-content
+        - if abend.recipe_id.present?
+          .title.is-5= Recipe.find_by(id: abend.recipe_id).title if Recipe.find_by(id: abend.recipe_id).present?
+        - else
+          .title.is-5 Nicht geplant
+        %nav.level.is-mobile
+          .level-left
+            %a.level-item.button.is-small.is-light{:href => "/day/#{abend.id}/edit"}
               = fa_icon "pencil-square-o"
-          - if @moabend.recipe_id.present?
-            %a.level-item.button.is-small.is-light{:href => "/#{@moabend.recipe_id}/"}
-              = fa_icon "cutlery", text: "⠀Zum Rezept"
-.title.is-4 Dienstag
-.box
-  %article.media
-    .media-left
-      %figure.image.is-64x64
-        %img= image_tag "sun.png"
-    .media-content
-      - if @dimittag.recipe_id.present?
-        .title.is-5= Recipe.find_by(id: @dimittag.recipe_id).title if Recipe.find_by(id: @dimittag.recipe_id).present?
-      - else
-        .title.is-5 Nicht geplant
-      %nav.level.is-mobile
-        .level-left
-          - if user_signed_in?
-            %a.level-item.button.is-small.is-light{:href => "/day/#{@dimittag.id}/edit"}
-              = fa_icon "pencil-square-o"
-          - if @dimittag.recipe_id.present?
-            %a.level-item.button.is-small.is-light{:href => "/#{@dimittag.recipe_id}/"}
-              = fa_icon "cutlery", text: "⠀Zum Rezept"
-  %article.media
-    .media-left
-      %figure.image.is-64x64
-        %img= image_tag "cloudy-night.png"
-    .media-content
-      - if @diabend.recipe_id.present?
-        .title.is-5= Recipe.find_by(id: @diabend.recipe_id).title if Recipe.find_by(id: @diabend.recipe_id).present?
-      - else
-        .title.is-5 Nicht geplant
-      %nav.level.is-mobile
-        .level-left
-          - if user_signed_in?
-            %a.level-item.button.is-small.is-light{:href => "/day/#{@diabend.id}/edit"}
-              = fa_icon "pencil-square-o"
-          - if @diabend.recipe_id.present?
-            %a.level-item.button.is-small.is-light{:href => "/#{@diabend.recipe_id}/"}
-              = fa_icon "cutlery", text: "⠀Zum Rezept"
-.title.is-4 Mittwoch
-.box
-  %article.media
-    .media-left
-      %figure.image.is-64x64
-        %img= image_tag "sun.png"
-    .media-content
-      - if @mimittag.recipe_id.present?
-        .title.is-5= Recipe.find_by(id: @mimittag.recipe_id).title if Recipe.find_by(id: @mimittag.recipe_id).present?
-      - else
-        .title.is-5 Nicht geplant
-      %nav.level.is-mobile
-        .level-left
-          - if user_signed_in?
-            %a.level-item.button.is-small.is-light{:href => "/day/#{@mimittag.id}/edit"}
-              = fa_icon "pencil-square-o"
-          - if @mimittag.recipe_id.present?
-            %a.level-item.button.is-small.is-light{:href => "/#{@mimittag.recipe_id}/"}
-              = fa_icon "cutlery", text: "⠀Zum Rezept"
-  %article.media
-    .media-left
-      %figure.image.is-64x64
-        %img= image_tag "cloudy-night.png"
-    .media-content
-      - if @miabend.recipe_id.present?
-        .title.is-5= Recipe.find_by(id: @miabend.recipe_id).title if Recipe.find_by(id: @miabend.recipe_id).present?
-      - else
-        .title.is-5 Nicht geplant
-      %nav.level.is-mobile
-        .level-left
-          - if user_signed_in?
-            %a.level-item.button.is-small.is-light{:href => "/day/#{@miabend.id}/edit"}
-              = fa_icon "pencil-square-o"
-          - if @miabend.recipe_id.present?
-            %a.level-item.button.is-small.is-light{:href => "/#{@miabend.recipe_id}/"}
-              = fa_icon "cutlery", text: "⠀Zum Rezept"
-.title.is-4 Donnerstag
-.box
-  %article.media
-    .media-left
-      %figure.image.is-64x64
-        %img= image_tag "sun.png"
-    .media-content
-      - if @domittag.recipe_id.present?
-        .title.is-5= Recipe.find_by(id: @domittag.recipe_id).title if Recipe.find_by(id: @domittag.recipe_id).present?
-      - else
-        .title.is-5 Nicht geplant
-      %nav.level.is-mobile
-        .level-left
-          - if user_signed_in?
-            %a.level-item.button.is-small.is-light{:href => "/day/#{@domittag.id}/edit"}
-              = fa_icon "pencil-square-o"
-          - if @domittag.recipe_id.present?
-            %a.level-item.button.is-small.is-light{:href => "/#{@domittag.recipe_id}/"}
-              = fa_icon "cutlery", text: "⠀Zum Rezept"
-  %article.media
-    .media-left
-      %figure.image.is-64x64
-        %img= image_tag "cloudy-night.png"
-    .media-content
-      - if @doabend.recipe_id.present?
-        .title.is-5= Recipe.find_by(id: @doabend.recipe_id).title if Recipe.find_by(id: @doabend.recipe_id).present?
-      - else
-        .title.is-5 Nicht geplant
-      %nav.level.is-mobile
-        .level-left
-          - if user_signed_in?
-            %a.level-item.button.is-small.is-light{:href => "/day/#{@doabend.id}/edit"}
-              = fa_icon "pencil-square-o"
-          - if @doabend.recipe_id.present?
-            %a.level-item.button.is-small.is-light{:href => "/#{@doabend.recipe_id}/"}
-              = fa_icon "cutlery", text: "⠀Zum Rezept"
-.title.is-4 Freitag
-.box
-  %article.media
-    .media-left
-      %figure.image.is-64x64
-        %img= image_tag "sun.png"
-    .media-content
-      - if @frmittag.recipe_id.present?
-        .title.is-5= Recipe.find_by(id: @frmittag.recipe_id).title if Recipe.find_by(id: @frmittag.recipe_id).present?
-      - else
-        .title.is-5 Nicht geplant
-      %nav.level.is-mobile
-        .level-left
-          - if user_signed_in?
-            %a.level-item.button.is-small.is-light{:href => "/day/#{@frmittag.id}/edit"}
-              = fa_icon "pencil-square-o"
-          - if @frmittag.recipe_id.present?
-            %a.level-item.button.is-small.is-light{:href => "/#{@frmittag.recipe_id}/"}
-              = fa_icon "cutlery", text: "⠀Zum Rezept"
-  %article.media
-    .media-left
-      %figure.image.is-64x64
-        %img= image_tag "cloudy-night.png"
-    .media-content
-      - if @frabend.recipe_id.present?
-        .title.is-5= Recipe.find_by(id: @frabend.recipe_id).title if Recipe.find_by(id: @frabend.recipe_id).present?
-      - else
-        .title.is-5 Nicht geplant
-      %nav.level.is-mobile
-        .level-left
-          - if user_signed_in?
-            %a.level-item.button.is-small.is-light{:href => "/day/#{@frabend.id}/edit"}
-              = fa_icon "pencil-square-o"
-          - if @frabend.recipe_id.present?
-            %a.level-item.button.is-small.is-light{:href => "/#{@frabend.recipe_id}/"}
-              = fa_icon "cutlery", text: "⠀Zum Rezept"
-.title.is-4 Samstag
-.box
-  %article.media
-    .media-left
-      %figure.image.is-64x64
-        %img= image_tag "sun.png"
-    .media-content
-      - if @samittag.recipe_id.present?
-        .title.is-5= Recipe.find_by(id: @samittag.recipe_id).title if Recipe.find_by(id: @samittag.recipe_id).present?
-      - else
-        .title.is-5 Nicht geplant
-      %nav.level.is-mobile
-        .level-left
-          - if user_signed_in?
-            %a.level-item.button.is-small.is-light{:href => "/day/#{@samittag.id}/edit"}
-              = fa_icon "pencil-square-o"
-          - if @samittag.recipe_id.present?
-            %a.level-item.button.is-small.is-light{:href => "/#{@samittag.recipe_id}/"}
-              = fa_icon "cutlery", text: "⠀Zum Rezept"
-  %article.media
-    .media-left
-      %figure.image.is-64x64
-        %img= image_tag "cloudy-night.png"
-    .media-content
-      - if @saabend.recipe_id.present?
-        .title.is-5= Recipe.find_by(id: @saabend.recipe_id).title if Recipe.find_by(id: @saabend.recipe_id).present?
-      - else
-        .title.is-5 Nicht geplant
-      %nav.level.is-mobile
-        .level-left
-          - if user_signed_in?
-            %a.level-item.button.is-small.is-light{:href => "/day/#{@saabend.id}/edit"}
-              = fa_icon "pencil-square-o"
-          - if @saabend.recipe_id.present?
-            %a.level-item.button.is-small.is-light{:href => "/#{@saabend.recipe_id}/"}
-              = fa_icon "cutlery", text: "⠀Zum Rezept"
-.title.is-4 Sonntag
-.box
-  %article.media
-    .media-left
-      %figure.image.is-64x64
-        %img= image_tag "sun.png"
-    .media-content
-      - if @somittag.recipe_id.present?
-        .title.is-5= Recipe.find_by(id: @somittag.recipe_id).title if Recipe.find_by(id: @somittag.recipe_id).present?
-      - else
-        .title.is-5 Nicht geplant
-      %nav.level.is-mobile
-        .level-left
-          - if user_signed_in?
-            %a.level-item.button.is-small.is-light{:href => "/day/#{@somittag.id}/edit"}
-              = fa_icon "pencil-square-o"
-          - if @somittag.recipe_id.present?
-            %a.level-item.button.is-small.is-light{:href => "/#{@somittag.recipe_id}/"}
-              = fa_icon "cutlery", text: "⠀Zum Rezept"
-  %article.media
-    .media-left
-      %figure.image.is-64x64
-        %img= image_tag "cloudy-night.png"
-    .media-content
-      - if @soabend.recipe_id.present?
-        .title.is-5= Recipe.find_by(id: @soabend.recipe_id).title if Recipe.find_by(id: @soabend.recipe_id).present?
-      - else
-        .title.is-5 Nicht geplant
-      %nav.level.is-mobile
-        .level-left
-          - if user_signed_in?
-            %a.level-item.button.is-small.is-light{:href => "/day/#{@soabend.id}/edit"}
-              = fa_icon "pencil-square-o"
-          - if @soabend.recipe_id.present?
-            %a.level-item.button.is-small.is-light{:href => "/#{@soabend.recipe_id}/"}
-              = fa_icon "cutlery", text: "⠀Zum Rezept"
+            - if abend.recipe_id.present?
+              %a.level-item.button.is-small.is-light{:href => "/#{abend.recipe_id}/"}
+                = fa_icon "cutlery", text: "⠀Zum Rezept"

@@ -1,7 +1,27 @@
+%link{:href => "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css", :rel => "stylesheet"}
+
 = form_with model: @day, url: url do |form|
   %div.field
-    .select.is-fullwidth.is-black= form.collection_select :recipe_id, Recipe.order("updated_at DESC").all, :id, :title, include_blank: "Nicht geplant", class: "selectize"
+    = form.collection_select :recipe_id, Recipe.order("title ASC").all, :id, :title, {include_blank: "Nicht geplant"}, class: "selectize"
 
   %div.control
     %br
     %input.button.is-light.is-fullwidth{:type => "submit", :value => "Speichern"}
+
+:javascript
+  $(".selectize").selectize({
+    allowEmptyOption: true,
+    createOnBlur: true,
+    render: {
+    option_create: function(data, escape) {
+      return '<div class="create"><i class="fas fa-plus-circle"></i>⠀<strong>' + escape(data.input) + '</strong></div>';
+      }
+    },
+    create: function(input, callback) {
+      $.post('/new.js', { recipe: { title: input } })
+        .always(function(response){
+          const recipe = JSON.parse(response.responseText)
+          callback({value: recipe.id, text: recipe.title });
+        })
+    }
+  });
