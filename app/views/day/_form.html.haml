@@ -11,17 +11,15 @@
 :javascript
   $(".selectize").selectize({
     allowEmptyOption: true,
-    createOnBlur: true,
     render: {
     option_create: function(data, escape) {
-      return '<div class="create"><i class="fas fa-plus-circle"></i>⠀<strong>' + escape(data.input) + '</strong></div>';
+      return '<div class="create"><i class="fas fa-plus-circle"></i> Erstellen: <strong>' + escape(data.input) + '</strong></div>';
       }
     },
     create: function(input, callback) {
-      $.post('/new.js', { recipe: { title: input } })
+      $.post('/new.json', { recipe: { title: input } })
         .always(function(response){
-          const recipe = JSON.parse(response.responseText)
-          callback({value: recipe.id, text: recipe.title });
+          callback({value: response.id, text: response.title });
         })
     }
   });

@@ -16,7 +16,7 @@ class RecipeController < ApplicationController
     if @recipe.save
       respond_to do |format|
         format.html { redirect_to("/#{@recipe.id}") }
-        format.js { render :json => { id: @recipe.id, title: @recipe.title } }
+        format.json { render :json => { id: @recipe.id, title: @recipe.title } }
       end
     else
       render "new"
