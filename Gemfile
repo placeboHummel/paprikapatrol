@@ -22,6 +22,7 @@ gem "aws-sdk-s3"
 gem "ahoy_matey"
 gem "groupdate"
 gem "chartkick"
+gem "pry-byebug"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
