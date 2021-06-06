@@ -21,7 +21,6 @@
           - if current_page?(day_index_path)
             = link_to '<i class="fas fa-undo"></i>⠀Plan zurücksetzen'.html_safe, day_reset_path, method: :post, class: "navbar-item", data: { confirm: "Den Wochenplan wirklich zurücksetzen?" }
           - if !@q.blank?
-            %hr
             = search_form_for @q, url: root_path do |f|
               .control.navbar-item
                 = f.search_field :title_or_action_text_rich_text_body_cont, class: "input", placeholder: "🔍 Suche"
