@@ -33,3 +33,5 @@
             - if abend.recipe_id.present?
               %a.level-item.button.is-small.is-light{:href => "/#{abend.recipe_id}/"}
                 = fa_icon "cutlery", text: "⠀Zum Rezept"
+= link_to '<i class="fas fa-undo"></i>'.html_safe + '⠀Plan zurücksetzen', day_reset_path, method: :post, class: "button is-light alignright", data: { confirm: "Den Wochenplan wirklich zurücksetzen?" }
+%br

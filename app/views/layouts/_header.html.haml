@@ -18,6 +18,8 @@
           - if user_signed_in?
             = link_to '<i class="far fa-chart-bar"></i>⠀Tracking'.html_safe, tracking_index_path, class: "navbar-item"
             = link_to '<i class="fa fa-plus"></i>⠀ Neues Rezept'.html_safe, recipe_new_path, class: "navbar-item"
+          - if current_page?(day_index_path)
+            = link_to '<i class="fas fa-undo"></i>⠀Plan zurücksetzen'.html_safe, day_reset_path, method: :post, class: "navbar-item", data: { confirm: "Den Wochenplan wirklich zurücksetzen?" }
           - if !@q.blank?
             %hr
             = search_form_for @q, url: root_path do |f|
