@@ -8,9 +8,9 @@
     %h2.title.is-4= @recipe.title
     .field.is-grouped.is-grouped-right.alignright
       %p.control
-        .tag.is-small.is-light{:onclick => "increaseServing(); berechnen();", :type => "button"}= '<i class="fas fa-plus"></i>'.html_safe
+        .tag.is-small.is-light{:onclick => "increaseServing(); berechnen();", :type => "button", style: "cursor: pointer;"}= '<i class="fas fa-plus"></i>'.html_safe
       %p.control
-        .tag.is-small.is-light{:onclick => "decreaseServing(); berechnen();", :type => "button"}= '<i class="fas fa-minus"></i>'.html_safe
+        .tag.is-small.is-light{:onclick => "decreaseServing(); berechnen();", :type => "button", style: "cursor: pointer;"}= '<i class="fas fa-minus"></i>'.html_safe
     %p= @recipe.description
     %br
     - if user_signed_in?
