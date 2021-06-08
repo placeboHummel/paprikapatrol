@@ -6,7 +6,7 @@
   %br
   .container
     %h2.title.is-4= @recipe.title
-    .field.is-grouped.is-grouped-right.alignright
+    #servingButtons.field.is-grouped.is-grouped-right.alignright
       %p.control
         .tag.is-small.is-light{:onclick => "increaseServing(); berechnen();", :type => "button", style: "cursor: pointer;"}= '<i class="fas fa-plus"></i>'.html_safe
       %p.control
@@ -21,6 +21,12 @@
   var li_servings = document.getElementsByTagName("li")
   var arr = Array.from(li_servings)
   var htmlArray = arr.map(x => x.innerHTML)
+
+  if (document.getElementsByTagName("h1")[0]) {
+    document.getElementById('servingButtons').style.visibility = "visible";
+      } else {
+    document.getElementById('servingButtons').style.visibility = "hidden";
+  }
   
   function berechnen() {
     arr.forEach(function(a, i) {
