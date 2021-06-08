@@ -5,8 +5,34 @@
         %img= image_tag @recipe.main_image.variant(resize_to_limit: [700, 550]) if @recipe.main_image.attached?
   %br
   .container
-    - if user_signed_in?
-      %a.button.is-small.is-light.alignright{:href => "/#{@recipe.id}/edit"}
-        = fa_icon "pencil"
     %h2.title.is-4= @recipe.title
+    .field.is-grouped.is-grouped-right.alignright
+      %p.control
+        .tag.is-small.is-light{:onclick => "increaseServing(); berechnen();", :type => "button"}= '<i class="fas fa-plus"></i>'.html_safe
+      %p.control
+        .tag.is-small.is-light{:onclick => "decreaseServing(); berechnen();", :type => "button"}= '<i class="fas fa-minus"></i>'.html_safe
     %p= @recipe.description
+    %br
+    - if user_signed_in?
+      %a.button.is-small.is-light{:href => "/#{@recipe.id}/edit"}= "Bearbeiten"
+%input#portionen{type: "text", value: "4", style: "display: none;"}
+
+:javascript
+  var li_servings = document.getElementsByTagName("li")
+  var arr = Array.from(li_servings)
+  var htmlArray = arr.map(x => x.innerHTML)
+  
+  function berechnen() {
+    arr.forEach(function(a, i) {
+      a.innerHTML = htmlArray[i].replace(/^\d+(\.\d+)?/g, parseFloat(htmlArray[i]) / 4 * document.getElementById("portionen").value)
+    });
+    document.getElementsByTagName("h1")[0].innerHTML = document.getElementsByTagName("h1")[0].innerHTML.replace(/\d+/g, document.getElementById("portionen").value)
+  }
+
+  function increaseServing() {
+    document.getElementById("portionen").value++
+  }
+
+  function decreaseServing() {
+    document.getElementById("portionen").value--
+  }
