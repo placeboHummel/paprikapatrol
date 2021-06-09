@@ -5,10 +5,12 @@ class RecipeController < ApplicationController
   def index
     @q = Recipe.ransack(params[:q])
     @recipe = @q.result(distinct: true).order("title ASC")
+    @title = "Alle Rezepte"
   end
 
   def new
     @recipe = Recipe.new
+    @title = "Neues Rezept"
   end
 
   def create
@@ -25,11 +27,13 @@ class RecipeController < ApplicationController
   end
 
   def show
-    @recipe = Recipe.find(params[:id])
+    @recipe = Recipe.friendly.find(params[:id])
+    redirect_to action: "show", id: @recipe.friendly_id, status: 301 unless @recipe.friendly_id == params[:id]
+    @title = "#{@recipe.title}"
   end
 
   def update
-    @recipe = Recipe.find(params[:id])
+    @recipe = Recipe.friendly.find(params[:id])
 
     if @recipe.update(recipe_params)
       redirect_to "/#{@recipe.id}"
@@ -39,13 +43,15 @@ class RecipeController < ApplicationController
   end
 
   def edit
-    @recipe = Recipe.find(params[:id])
+    @recipe = Recipe.friendly.find(params[:id])
+    redirect_to action: "edit", id: @recipe.friendly_id, status: 301 unless @recipe.friendly_id == params[:id]
+    @title = "#{@recipe.title}"
   end
 
   def delete
-    recipe = Recipe.find(params[:id])
+    recipe = Recipe.friendly.find(params[:id])
     recipe.destroy
-    redirect_to recipe_index_path, notice: "#{recipe.title.titleize} erfolgreich gelöscht."
+    redirect_to root_path
   end
 
   private

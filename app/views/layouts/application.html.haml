@@ -1,7 +1,7 @@
 !!!
 %html
   %head
-    %title Paprika Patrol
+    %title= @title || "Paprika Patrol • Leckere vegane Rezepte" 
     = csrf_meta_tags
     = csp_meta_tag
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'

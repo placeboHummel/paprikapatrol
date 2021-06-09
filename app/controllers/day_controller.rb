@@ -3,6 +3,7 @@ class DayController < ApplicationController
 
   def index
     @day = Day.all
+    @title = "Wochenplan"
   end
 
   def new
@@ -20,11 +21,11 @@ class DayController < ApplicationController
   end
 
   def show
-    @day = Day.find(params[:id])
+    @day = Day.friendly.find(params[:id])
   end
 
   def update
-    @day = Day.find(params[:id])
+    @day = Day.friendly.find(params[:id])
 
     if @day.update(day_params)
       redirect_to day_index_path
@@ -34,7 +35,9 @@ class DayController < ApplicationController
   end
 
   def edit
-    @day = Day.find(params[:id])
+    @day = Day.friendly.find(params[:id])
+    redirect_to action: "edit", id: @day.friendly_id, status: 301 unless @day.friendly_id == params[:id]
+    @title = "#{@day.name}"
   end
 
   def reset_plan

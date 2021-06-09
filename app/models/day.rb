@@ -7,4 +7,17 @@ class Day < ApplicationRecord
       day.update(recipe_id: nil)
     end
   end
+
+  extend FriendlyId
+  friendly_id :name, use: :slugged
+
+  def should_generate_new_friendly_id?
+    name_changed?
+  end
+
+  def slug=(value)
+    if value.present?
+      write_attribute(:slug, value)
+    end
+  end
 end
