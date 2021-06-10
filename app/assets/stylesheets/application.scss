@@ -54,6 +54,10 @@ body {
   $input-arrow: black;
 }
 
+.is-current {
+  color: #125d98;
+}
+
 .navbar-link:not(.is-arrowless)::after {
   border-color: black !important;
   margin-top: -0.375em;
