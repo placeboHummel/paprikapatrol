@@ -1,45 +1,46 @@
-%div.has-text-right
-  = link_to '<i class="fas fa-undo"></i>'.html_safe + '⠀Plan zurücksetzen', day_reset_path, method: :post, class: "tag no-text-decoration", data: { confirm: "Den Wochenplan wirklich zurücksetzen?" }
-  .tag{"data-target" => "#info", "data-toggle" => "collapse", :type => "button", style: "cursor: pointer;"}= '<i class="fas fa-info-circle"></i>'.html_safe
-  #info.collapse
-    %br
-    %article.message
-      .message-body.has-text-left
-        Hier kannst du für jeden Tag in der Woche dein Mittag- und Abendessen planen. Klicke dafür einfach auf das Stift-Icon.
-%br
+.max-width
+  %div.has-text-right
+    = link_to '<i class="fas fa-undo"></i>'.html_safe + '⠀Plan zurücksetzen', day_reset_path, method: :post, class: "tag no-text-decoration", data: { confirm: "Den Wochenplan wirklich zurücksetzen?" }
+    .tag{"data-target" => "#info", "data-toggle" => "collapse", :type => "button", style: "cursor: pointer;"}= '<i class="fas fa-info-circle"></i>'.html_safe
+    #info.collapse
+      %br
+      %article.message
+        .message-body.has-text-left
+          Hier kannst du für jeden Tag in der Woche dein Mittag- und Abendessen planen. Klicke dafür einfach auf das Stift-Icon.
+  %br
 
-- @day.each_slice(2) do |mittag, abend| 
-  .box
-    .title.is-4= mittag.name[/(.*)\s/,1]
-    %article.media
-      .media-left
-        %figure.image.is-64x64
-          %img= image_tag "lunch.png"
-      .media-content
-        - if mittag.recipe_id.present?
-          .title.is-5= Recipe.find_by(id: mittag.recipe_id).title if Recipe.find_by(id: mittag.recipe_id).present?
-        - else
-          .title.is-5 Nicht geplant
-        %nav.level.is-mobile
-          .level-left
-            %a.level-item.button.is-small.is-light{:href => "/day/#{mittag.id}/edit"}
-              = fa_icon "pencil-square-o"
-            - if mittag.recipe_id.present?
-              %a.level-item.button.is-small.is-light{:href => "/#{mittag.recipe_id}/"}
-                = fa_icon "cutlery", text: "⠀Zum Rezept"
-    %article.media
-      .media-left
-        %figure.image.is-64x64
-          %img= image_tag "dinner.png"
-      .media-content
-        - if abend.recipe_id.present?
-          .title.is-5= Recipe.find_by(id: abend.recipe_id).title if Recipe.find_by(id: abend.recipe_id).present?
-        - else
-          .title.is-5 Nicht geplant
-        %nav.level.is-mobile
-          .level-left
-            %a.level-item.button.is-small.is-light{:href => "/day/#{abend.id}/edit"}
-              = fa_icon "pencil-square-o"
-            - if abend.recipe_id.present?
-              %a.level-item.button.is-small.is-light{:href => "/#{abend.recipe_id}/"}
-                = fa_icon "cutlery", text: "⠀Zum Rezept"
+  - @day.each_slice(2) do |mittag, abend| 
+    .box
+      .title.is-4= mittag.name[/(.*)\s/,1]
+      %article.media
+        .media-left
+          %figure.image.is-64x64
+            %img= image_tag "lunch.png"
+        .media-content
+          - if mittag.recipe_id.present?
+            .title.is-5= Recipe.find_by(id: mittag.recipe_id).title if Recipe.find_by(id: mittag.recipe_id).present?
+          - else
+            .title.is-5 Nicht geplant
+          %nav.level.is-mobile
+            .level-left
+              %a.level-item.button.is-small.is-light{:href => "/day/#{mittag.id}/edit"}
+                = fa_icon "pencil-square-o"
+              - if mittag.recipe_id.present?
+                %a.level-item.button.is-small.is-light{:href => "/#{mittag.recipe_id}/"}
+                  = fa_icon "cutlery", text: "⠀Zum Rezept"
+      %article.media
+        .media-left
+          %figure.image.is-64x64
+            %img= image_tag "dinner.png"
+        .media-content
+          - if abend.recipe_id.present?
+            .title.is-5= Recipe.find_by(id: abend.recipe_id).title if Recipe.find_by(id: abend.recipe_id).present?
+          - else
+            .title.is-5 Nicht geplant
+          %nav.level.is-mobile
+            .level-left
+              %a.level-item.button.is-small.is-light{:href => "/day/#{abend.id}/edit"}
+                = fa_icon "pencil-square-o"
+              - if abend.recipe_id.present?
+                %a.level-item.button.is-small.is-light{:href => "/#{abend.recipe_id}/"}
+                  = fa_icon "cutlery", text: "⠀Zum Rezept"

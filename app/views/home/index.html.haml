@@ -1,14 +1,15 @@
-- @recipe.each_slice(2) do |recipes|
-  .columns.is-mobile.is-variable.is-1
-    - recipes.each do |recipe|
-      .column.columnhome
-        .card
-          .card-image
-            %figure.image
-              %a{:href => "/#{recipe.id}"}
-                = image_tag recipe.main_image_home
-          .card-content.less-padding
-            %a{:href => "/#{recipe.id}", :class => "has-text-dark"}
-              %p= recipe.title
+.max-width
+  - @recipe.each_slice(2) do |recipes|
+    .columns.is-mobile.is-variable.is-1
+      - recipes.each do |recipe|
+        .column.columnhome
+          .card
+            .card-image
+              %figure.image
+                %a{:href => "/#{recipe.id}"}
+                  = image_tag recipe.main_image_home
+            .card-content.less-padding
+              %a{:href => "/#{recipe.id}", :class => "has-text-dark"}
+                %p= recipe.title
 
-.flickr_pagination= will_paginate @recipe, previous_label: "«", next_label: "»"
+  .flickr_pagination.max-width= will_paginate @recipe, previous_label: "«", next_label: "»"

@@ -1,19 +1,20 @@
-= form_with model: @recipe, url: url do |form|
-  %div.field
-    %label.label Titel
-    = form.text_field :title, :placeholder => "Rezeptname", class: "input is-dark"
+.max-width
+  = form_with model: @recipe, url: url do |form|
+    %div.field
+      %label.label Titel
+      = form.text_field :title, :placeholder => "Rezeptname", class: "input is-dark"
 
-  %div.field
-    %label.label Beschreibung
-    = form.rich_text_area :description, :placeholder => "Was gehört zum Rezept?", class: "form-control is-dark"
+    %div.field
+      %label.label Beschreibung
+      = form.rich_text_area :description, :placeholder => "Was gehört zum Rezept?", class: "form-control is-dark"
 
-  %div.field
-    %div.btn-file.button.is-light.alignleft
-      ⇡ Titelbild auswählen
-      = form.file_field :main_image
+    %div.field
+      %div.btn-file.button.is-light.alignleft
+        ⇡ Titelbild auswählen
+        = form.file_field :main_image
 
-  - if @recipe.id.present?
-    = link_to '<i class="fas fa-trash"></i>'.html_safe, recipe_delete_path(@recipe), method: :delete, class: "button is-light alignright", data: { confirm: "'#{@recipe.title}' wirklich löschen?" }
+    - if @recipe.id.present?
+      = link_to '<i class="fas fa-trash"></i>'.html_safe, recipe_delete_path(@recipe), method: :delete, class: "button is-light alignright", data: { confirm: "'#{@recipe.title}' wirklich löschen?" }
 
-  %div.control
-    %input.button.is-success.is-fullwidth{:type => "submit", :value => "Speichern", :style => "margin-top: 4rem;"}
+    %div.control
+      %input.button.is-success.is-fullwidth{:type => "submit", :value => "Speichern", :style => "margin-top: 4rem;"}

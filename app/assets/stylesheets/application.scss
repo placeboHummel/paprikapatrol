@@ -20,10 +20,19 @@
 @import "font-awesome";
 
 body {
+  font-family: "Raleway", sans-serif;
+}
+
+.max-width {
   max-width: 800px;
   margin: 0 auto !important;
   float: none !important;
-  font-family: "Raleway", sans-serif;
+}
+
+.header-image {
+  background-image: url("http://orig14.deviantart.net/7584/f/2015/181/2/7/flat_mountains_landscape_by_ggiuliafilippini-d8zdbco.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 
 .yield {
