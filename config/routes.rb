@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "home#index"
 
+  get "/home/reorder/", to: "home#reorder", as: :reorder
+
   get "/tracking", to: "tracking#index", as: :tracking_index
 
   get "/day", to: "day#index", as: :day_index
