@@ -1,19 +1,19 @@
-%nav.navbar.is-white
+%nav.navbar.is-fixed-top.has-shadow
   .navbar-brand
     = link_to "PAprika PAtrol", root_path, class: "mobile-header", id: "title logo"
-    .navbar-burger.burger{"data-target" => "navbarExampleTransparentExample"}
-      %span
-      %span
-      %span
+    %a.navbar-burger.burger{"data-target" => "navbarExampleTransparentExample"}
+      %span{"aria-hidden" => "true"}
+      %span{"aria-hidden" => "true"}
+      %span{"aria-hidden" => "true"}
   #navbarExampleTransparentExample.navbar-menu
     .navbar-start
-    .navbar-end
+      = link_to '<i class="fa fa-home"></i>⠀Home'.html_safe, root_path, class: "navbar-item #{'is-current' if current_page?(root_path)}"
+      = link_to '<i class="fa fa-book"></i>⠀Alle Rezepte'.html_safe, recipe_index_path, class: "navbar-item #{'is-current' if current_page?(recipe_index_path)}"
+      = link_to '<i class="fa fa-calendar-alt"></i>⠀Wochenplan'.html_safe, day_index_path, class: "navbar-item #{'is-current' if current_page?(day_index_path)}"
       .navbar-item.has-dropdown.is-hoverable
-        .navbar-link Menü
-        .navbar-dropdown.is-boxed
-          = link_to '<i class="fa fa-home"></i>⠀Home'.html_safe, root_path, class: "navbar-item #{'is-current' if current_page?(root_path)}"
-          = link_to '<i class="fa fa-book"></i>⠀Alle Rezepte'.html_safe, recipe_index_path, class: "navbar-item #{'is-current' if current_page?(recipe_index_path)}"
-          = link_to '<i class="fa fa-calendar-alt"></i>⠀Wochenplan'.html_safe, day_index_path, class: "navbar-item #{'is-current' if current_page?(day_index_path)}"
+        %a.navbar-link
+          Mehr
+        .navbar-dropdown
           - if !user_signed_in?
             = link_to '<i class="fas fa-sign-in-alt"></i>⠀Login'.html_safe, new_user_session_path, class: "navbar-item #{'is-current' if current_page?(new_user_session_path)}"
           - if user_signed_in?
@@ -21,7 +21,13 @@
             = link_to '<i class="fa fa-plus"></i>⠀ Neues Rezept'.html_safe, recipe_new_path, class: "navbar-item #{'is-current' if current_page?(recipe_new_path)}"
           - if current_page?(day_index_path)
             = link_to '<i class="fas fa-undo"></i>⠀Plan zurücksetzen'.html_safe, day_reset_path, method: :post, class: "navbar-item #{'is-current' if current_page?(day_reset_path)}", data: { confirm: "Den Wochenplan wirklich zurücksetzen?" }
-          - if !@q.blank?
-            = search_form_for @q, url: root_path do |f|
-              .control.navbar-item
-                = f.search_field :title_or_action_text_rich_text_body_cont, class: "input", placeholder: "🔍 Suche"
+          = search_form_for @q, url: recipe_index_path do |f|
+            .control.navbar-item
+              = f.search_field :title_or_action_text_rich_text_body_cont, class: "input", placeholder: "🔍 Suche"
+    .navbar-end
+      .navbar-item
+        .buttons
+          %a.button.is-primary{style: "visibility: hidden;"}
+            %strong Wochenplan
+          %a.button.is-light{style: "visibility: hidden;"}
+            Login Login

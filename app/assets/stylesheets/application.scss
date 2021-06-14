@@ -30,7 +30,7 @@ body {
   margin-left: 0.8rem;
   margin-right: 0.8rem;
   margin-bottom: 2rem;
-  margin-top: 2rem;
+  margin-top: 5rem;
 }
 
 .gridbutton {
@@ -45,17 +45,16 @@ body {
   padding: 0.8rem;
 }
 
-.navbar-burger {
-  margin-top: 16px;
-}
+
+
+
 
 .navbar-item.has-dropdown {
-  margin-top: 20px;
   $input-arrow: black;
 }
 
 .is-current {
-  color: #125d98;
+  color: #8E9775;
 }
 
 .navbar-link:not(.is-arrowless)::after {
@@ -64,30 +63,20 @@ body {
   right: 1.125em;
 }
 
+.navbar-link:hover {
+  color: #8E9775 !important;
+}
+
 .table td,
 .table th {
   padding-left: 0rem;
 }
 
-@media screen and (min-width: 1024px) {
-  #title {
-    visibility: hidden;
-    display: none;
-  }
-}
-
-@media screen and (max-width: 1024px) {
-  #logo {
-    visibility: hidden;
-    display: none;
-  }
-}
-
 .mobile-header {
-  padding-top: 20px;
+  padding-top: 8px;
   padding-left: 10px;
   font-family: "Major Mono Display", monospace;
-  font-size: 27px;
+  font-size: 24px;
   color: black;
 }
 
@@ -97,6 +86,18 @@ body {
 
 .navbar-item img {
   max-height: 10rem;
+}
+
+.navbar-item:hover {
+  color: #8E9775 !important;
+}
+
+.navbar-item:focus {
+  color: #8E9775 !important;
+}
+
+.navbar-start {
+  flex-grow: 1; justify-content: center;
 }
 
 .navbar-item .header {

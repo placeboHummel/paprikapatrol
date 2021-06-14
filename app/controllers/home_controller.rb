@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :gridview]
+  skip_before_action :authenticate_user!, only: [:index]
 
   def index
     @q = Recipe.ransack(params[:q])

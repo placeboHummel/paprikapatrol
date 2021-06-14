@@ -16,4 +16,20 @@ class Recipe < ApplicationRecord
       write_attribute(:slug, value)
     end
   end
+
+  def main_image_show
+    main_image.attached? ? main_image.variant(resize_to_limit: [700, 550]) : "placeholder.png"
+  end
+
+  def main_image_home
+    main_image.attached? ? main_image.variant(resize_to_limit: [450, 450]) : "placeholder.png"
+  end
+
+  def main_image_all_recipes
+    main_image.attached? ? main_image.variant(resize_to_limit: [350, 350]) : "placeholder_small.png"
+  end
+
+  def description_or_progress
+    description.blank? ? '<p style="text-align:center;"><img src="https://i.imgur.com/p5BC0l2.gif"></p>'.html_safe : description
+  end
 end

@@ -6,7 +6,7 @@
     %tr
       %td
         %a{:href => "/#{recipe.id}/"}
-          = image_tag recipe.main_image.variant(resize_to_limit: [350, 350]) if recipe.main_image.attached?
+          = image_tag recipe.main_image_all_recipes
       %td
         %a{:href => "/#{recipe.id}/", :class => "has-text-dark"}
           %p= recipe.title
