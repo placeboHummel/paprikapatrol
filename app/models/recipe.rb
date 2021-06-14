@@ -32,4 +32,13 @@ class Recipe < ApplicationRecord
   def description_or_progress
     description.blank? ? '<p style="text-align:center;"><img src="https://i.imgur.com/p5BC0l2.gif"></p>'.html_safe : description
   end
+
+  def self.reorder_in_progress
+    Recipe.all.each do |recipe|
+      if recipe.description.blank?
+        recipe.update(updated_at: 1.year.ago)
+      else
+      end
+    end
+  end
 end
