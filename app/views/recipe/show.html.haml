@@ -1,46 +1,47 @@
-.card
-  .card-image
-    %figure.image.is-4by3
-      %img= image_tag @recipe.main_image_show
-  .card-content
-    .media
-      .media-content
-        %h2.title.is-4= @recipe.title
-    #servingButtons.field.is-grouped.is-grouped-right.alignright
-      %p.control
-        .tag.is-small.is-light{:onclick => "decreaseServing(); berechnen();", :type => "button", style: "cursor: pointer;"}= '<i class="fas fa-minus"></i>'.html_safe
-      %p.control
-        .tag.is-small.is-light{:onclick => "increaseServing(); berechnen();", :type => "button", style: "cursor: pointer;"}= '<i class="fas fa-plus"></i>'.html_safe
-    .content
-      %p= @recipe.description_or_progress
-%br
-- if user_signed_in?
-  %a.button.is-small.is-light{:href => "/#{@recipe.id}/edit"}= "Bearbeiten"
+.max-width
+  .card
+    .card-image
+      %figure.image.is-4by3
+        %img= image_tag @recipe.main_image_show
+    .card-content
+      .media
+        .media-content
+          %h2.title.is-4= @recipe.title
+      #servingButtons.field.is-grouped.is-grouped-right.alignright
+        %p.control
+          .tag.is-small.is-light{:onclick => "decreaseServing(); berechnen();", :type => "button", style: "cursor: pointer;"}= '<i class="fas fa-minus"></i>'.html_safe
+        %p.control
+          .tag.is-small.is-light{:onclick => "increaseServing(); berechnen();", :type => "button", style: "cursor: pointer;"}= '<i class="fas fa-plus"></i>'.html_safe
+      .content
+        %p= @recipe.description_or_progress
+  %br
+  - if user_signed_in?
+    %a.button.is-small.is-light{:href => "/#{@recipe.id}/edit"}= "Bearbeiten"
 
-%input#portionen{type: "text", value: "4", style: "display: none;"}
+  %input#portionen{type: "text", value: "4", style: "display: none;"}
 
-:javascript
-  var li_servings = document.getElementsByTagName("li")
-  var arr = Array.from(li_servings)
-  var htmlArray = arr.map(x => x.innerHTML)
+  :javascript
+    var li_servings = document.getElementsByTagName("li")
+    var arr = Array.from(li_servings)
+    var htmlArray = arr.map(x => x.innerHTML)
 
-  if (document.getElementsByTagName("h1")[0]) {
-    document.getElementById('servingButtons').style.visibility = "visible";
-      } else {
-    document.getElementById('servingButtons').style.visibility = "hidden";
-  }
-  
-  function berechnen() {
-    arr.forEach(function(a, i) {
-      a.innerHTML = htmlArray[i].replace(/^\d+(\.\d+)?/g, parseFloat(htmlArray[i]) / 4 * document.getElementById("portionen").value)
-    });
-    document.getElementsByTagName("h1")[0].innerHTML = document.getElementsByTagName("h1")[0].innerHTML.replace(/\d+/g, document.getElementById("portionen").value)
-  }
+    if (document.getElementsByTagName("h1")[0]) {
+      document.getElementById('servingButtons').style.visibility = "visible";
+        } else {
+      document.getElementById('servingButtons').style.visibility = "hidden";
+    }
+    
+    function berechnen() {
+      arr.forEach(function(a, i) {
+        a.innerHTML = htmlArray[i].replace(/^\d+(\.\d+)?/g, parseFloat(htmlArray[i]) / 4 * document.getElementById("portionen").value)
+      });
+      document.getElementsByTagName("h1")[0].innerHTML = document.getElementsByTagName("h1")[0].innerHTML.replace(/\d+/g, document.getElementById("portionen").value)
+    }
 
-  function increaseServing() {
-    document.getElementById("portionen").value++
-  }
+    function increaseServing() {
+      document.getElementById("portionen").value++
+    }
 
-  function decreaseServing() {
-    document.getElementById("portionen").value--
-  }
+    function decreaseServing() {
+      document.getElementById("portionen").value--
+    }

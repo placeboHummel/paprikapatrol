@@ -1,25 +1,26 @@
-%link{:href => "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css", :rel => "stylesheet"}
+.max-width
+  %link{:href => "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css", :rel => "stylesheet"}
 
-= form_with model: @day, url: url do |form|
-  %div.field
-    = form.collection_select :recipe_id, Recipe.order("title ASC").all, :id, :title, {include_blank: "Nicht geplant"}, class: "selectize"
+  = form_with model: @day, url: url do |form|
+    %div.field
+      = form.collection_select :recipe_id, Recipe.order("title ASC").all, :id, :title, {include_blank: "Nicht geplant"}, class: "selectize"
 
-  %div.control
-    %br
-    %input.button.is-light.is-fullwidth{:type => "submit", :value => "Speichern"}
+    %div.control
+      %br
+      %input.button.is-light.is-fullwidth{:type => "submit", :value => "Speichern"}
 
-:javascript
-  $(".selectize").selectize({
-    allowEmptyOption: true,
-    render: {
-    option_create: function(data, escape) {
-      return '<div class="create"><i class="fas fa-plus-circle"></i> Erstellen: <strong>' + escape(data.input) + '</strong></div>';
+  :javascript
+    $(".selectize").selectize({
+      allowEmptyOption: true,
+      render: {
+      option_create: function(data, escape) {
+        return '<div class="create"><i class="fas fa-plus-circle"></i> Erstellen: <strong>' + escape(data.input) + '</strong></div>';
+        }
+      },
+      create: function(input, callback) {
+        $.post('/new.json', { recipe: { title: input } })
+          .always(function(response){
+            callback({value: response.id, text: response.title });
+          })
       }
-    },
-    create: function(input, callback) {
-      $.post('/new.json', { recipe: { title: input } })
-        .always(function(response){
-          callback({value: response.id, text: response.title });
-        })
-    }
-  });
+    });

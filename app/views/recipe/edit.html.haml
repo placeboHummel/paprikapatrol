@@ -1,5 +1,6 @@
-.card
-  %figure.image
-    = image_tag @recipe.main_image_show
-%br
-= render partial: "form", locals: {url: recipe_update_path}
+.max-width
+  .card
+    %figure.image
+      = image_tag @recipe.main_image_show
+  %br
+  = render partial: "form", locals: {url: recipe_update_path}
