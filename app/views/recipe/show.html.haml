@@ -1,19 +1,16 @@
 .max-width
   .card
     .card-image
-      %figure.image.is-4by3
+      %figure.image
         %img= image_tag @recipe.main_image_show
-    .card-content
-      .media
-        .media-content
-          %h2.title.is-4= @recipe.title
-      #servingButtons.field.is-grouped.is-grouped-right.alignright
-        %p.control
-          .tag.is-small.is-light{:onclick => "decreaseServing(); berechnen();", :type => "button", style: "cursor: pointer;"}= '<i class="fas fa-minus"></i>'.html_safe
-        %p.control
-          .tag.is-small.is-light{:onclick => "increaseServing(); berechnen();", :type => "button", style: "cursor: pointer;"}= '<i class="fas fa-plus"></i>'.html_safe
-      .content
-        %p= @recipe.description_or_progress
+  %br
+  %h2.title.is-4= @recipe.title
+  #servingButtons.field.is-grouped.is-grouped-right.alignright
+    %p.control
+      .tag.is-small.is-light{:onclick => "decreaseServing(); berechnen();", :type => "button", style: "cursor: pointer;"}= '<i class="fas fa-minus"></i>'.html_safe
+    %p.control
+      .tag.is-small.is-light{:onclick => "increaseServing(); berechnen();", :type => "button", style: "cursor: pointer;"}= '<i class="fas fa-plus"></i>'.html_safe
+  %p= @recipe.description_or_progress
   %br
   - if user_signed_in?
     %a.button.is-small.is-light{:href => "/#{@recipe.id}/edit"}= "Bearbeiten"
