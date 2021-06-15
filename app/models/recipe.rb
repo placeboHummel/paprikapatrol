@@ -35,7 +35,7 @@ class Recipe < ApplicationRecord
 
   def self.reorder_in_progress
     Recipe.all.each do |recipe|
-      if recipe.description.blank?
+      if !recipe.main_image.attached?
         recipe.update(updated_at: 1.year.ago)
       else
       end
