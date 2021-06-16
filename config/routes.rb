@@ -4,6 +4,9 @@ Rails.application.routes.draw do
 
   get "/home/reorder/", to: "home#reorder", as: :reorder
 
+  get "/home/moon", to: "application#moon", as: "moon"
+  get "/home/sun", to: "application#sun", as: "sun"
+
   get "/tracking", to: "tracking#index", as: :tracking_index
 
   get "/day", to: "day#index", as: :day_index

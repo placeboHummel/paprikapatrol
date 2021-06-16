@@ -6,8 +6,12 @@
       = form.collection_select :recipe_id, Recipe.order("title ASC").all, :id, :title, {include_blank: "Nicht geplant"}, class: "selectize"
 
     %div.control
-      %br
-      %input.button.is-light.is-fullwidth{:type => "submit", :value => "Speichern"}
+      - if cookies[:moon]
+        %br
+        %input.button.is-black{:type => "submit", :value => "Speichern"}
+      - else
+        %br
+        %input.button.is-success.is-fullwidth{:type => "submit", :value => "Speichern"}
 
   :javascript
     $(".selectize").selectize({

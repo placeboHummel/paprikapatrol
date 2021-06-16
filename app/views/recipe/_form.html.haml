@@ -17,4 +17,7 @@
       = link_to '<i class="fas fa-trash"></i>'.html_safe, recipe_delete_path(@recipe), method: :delete, class: "button is-light alignright", data: { confirm: "'#{@recipe.title}' wirklich löschen?" }
 
     %div.control
-      %input.button.is-success.is-fullwidth{:type => "submit", :value => "Speichern", :style => "margin-top: 4rem;"}
+      - if cookies[:moon]
+        %input.button.is-black.is-fullwidth{:type => "submit", :value => "Speichern", :style => "margin-top: 4rem;"}
+      - else
+        %input.button.is-success.is-fullwidth{:type => "submit", :value => "Speichern", :style => "margin-top: 4rem;"}

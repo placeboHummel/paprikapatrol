@@ -19,16 +19,15 @@
           - if user_signed_in?
             = link_to '<i class="far fa-chart-bar"></i>⠀Tracking'.html_safe, tracking_index_path, class: "navbar-item #{'is-current' if current_page?(tracking_index_path)}"
             = link_to '<i class="fa fa-plus"></i>⠀ Neues Rezept'.html_safe, recipe_new_path, class: "navbar-item #{'is-current' if current_page?(recipe_new_path)}"
-            = link_to '<i class="fas fa-sync"></i>⠀ Clear'.html_safe, reorder_path, class: "navbar-item #{'is-current' if current_page?(recipe_new_path)}"
-          - if current_page?(day_index_path)
-            = link_to '<i class="fas fa-undo"></i>⠀Plan zurücksetzen'.html_safe, day_reset_path, method: :post, class: "navbar-item #{'is-current' if current_page?(day_reset_path)}", data: { confirm: "Den Wochenplan wirklich zurücksetzen?" }
+            = link_to '<i class="fas fa-sync"></i>⠀ Startseite aufräumen'.html_safe, reorder_path, class: "navbar-item #{'is-current' if current_page?(recipe_new_path)}"
           = search_form_for @q, url: recipe_index_path do |f|
             .control.navbar-item
               = f.search_field :title_or_action_text_rich_text_body_cont, class: "input", placeholder: "🔍 Suche"
     .navbar-end
       .navbar-item
-        .buttons
-          %a.button.is-primary{style: "visibility: hidden;"}
-            %strong Wochenplan
-          %a.button.is-light{style: "visibility: hidden;"}
-            Login Login
+        - if cookies[:moon]
+          .has-text-right
+            = link_to '<i class="fas fa-sun"></i>'.html_safe, sun_path, class: "no-text-decoration", style: "color: white; font-size: 20px;"
+        - else
+          .has-text-right.has-text-dark
+            = link_to '<i class="fas fa-moon"></i>'.html_safe, moon_path, class: "no-text-decoration", style: "color: black; font-size: 20px;"

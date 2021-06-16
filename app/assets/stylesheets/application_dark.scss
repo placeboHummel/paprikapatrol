@@ -10,7 +10,6 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_self
  //= require actiontext
  //= require collapse
  //= require selectize
@@ -30,6 +29,12 @@ body {
   float: none !important;
 }
 
+.header-image {
+  background-image: url("http://orig14.deviantart.net/7584/f/2015/181/2/7/flat_mountains_landscape_by_ggiuliafilippini-d8zdbco.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
 .yield {
   margin-left: 0.8rem;
   margin-right: 0.8rem;
@@ -41,6 +46,60 @@ body {
   margin-left: 1rem;
 }
 
+.card {
+  border: none
+}
+
+.box {
+  border: none
+}
+
+.button, .card-header, .content h1, .content h2, .content h3, .content h4, .content h5, .content h6, .menu-label, .message-header, .tabs, .title {
+	text-transform: none;
+  font-family: "Raleway", sans-serif;
+
+}
+
+.content table td, .content table th, .table td, .table th {
+	border: none;
+	border-width: 0 0 1px;
+	padding: .5em .75em;
+	vertical-align: top;
+}
+
+.input, .select select, .textarea {
+	background-color: #080808;
+	border-color: white;
+	border-radius: 4px;
+	color: inherit;
+}
+
+.input:hover {
+	border-color: white;
+}
+
+.input:focus {
+	box-shadow: none;
+}
+
+.navbar-dropdown {
+	border-top: 2px solid white;
+}
+
+.message-body {
+	border-color: white;
+}
+
+.media + .media {
+	border-top: 1px solid white;
+	margin-top: 1rem;
+	padding-top: 1rem;
+}
+
+.image.is-64x64 {
+  filter: invert(100)
+}
+
 .columnhome {
   display: flex;
 }
@@ -50,17 +109,22 @@ body {
 }
 
 .navbar-item.has-dropdown {
-  $input-arrow: black;
-}
-
-.is-current {
-  color: #8E9775;
+  $input-arrow: white !important;
 }
 
 .navbar-link:not(.is-arrowless)::after {
-  border-color: black;
-  margin-top: -0.375em;
-  right: 1.125em;
+	border-color: white !important;
+	margin-top: -0.375em;
+	right: 1.125em;
+}
+
+.box {
+	background-color: #080808;
+	border-radius: 2px;
+	box-shadow: none;
+	color: #bebebe;
+	display: block;
+	padding: 4px;
 }
 
 .navbar-link:hover {
@@ -69,6 +133,12 @@ body {
 
 .navbar-end {
   margin-left: 14rem;
+}
+
+a {
+	color: #8E9775;
+	cursor: pointer;
+	text-decoration: none;
 }
 
 .table td,
@@ -81,7 +151,7 @@ body {
   padding-left: 10px;
   font-family: "Major Mono Display", monospace;
   font-size: 24px;
-  color: black;
+  color: white !important;
 }
 
 .logocentered {
@@ -98,6 +168,10 @@ body {
 
 .navbar-item:focus {
   color: #8E9775 !important;
+}
+
+.navbar-item, .navbar-link {
+  color:white
 }
 
 .navbar-start {
@@ -139,6 +213,11 @@ trix-toolbar .trix-button--icon-code,
 .trix-button--icon-quote,
 .trix-button-group.trix-button-group--history-tools {
   display: none;
+  background: white
+}
+
+trix-toolbar .trix-button {
+	background: white !important;
 }
 
 ul li {
@@ -185,7 +264,7 @@ trix-editor ol {
 .flickr_pagination .current {
   font-style: normal;
   font-weight: bold;
-  color: black;
+  color: white !important;
 }
 .flickr_pagination a {
   text-decoration: none;

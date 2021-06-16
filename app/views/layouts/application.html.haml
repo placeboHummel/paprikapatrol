@@ -8,15 +8,18 @@
     %script{:src => "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"}
     %script{:src => "https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"}
     %script(src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.13.3/js/standalone/selectize.min.js")
-
     %link{:href => "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css", :rel => "stylesheet"}
-    %link{:href => "https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css", :rel => "stylesheet"}
     %link{:href => "https://i.imgur.com/69PgdtI.png", :rel => "apple-touch-icon", :sizes => "128x128"}
     %link{:href => "https://fonts.gstatic.com", :rel => "preconnect"}/
     %link{:href => "https://fonts.googleapis.com/css2?family=Raleway:wght@400&display=swap", :rel => "stylesheet"}
-    %link{:href => "https://fonts.gstatic.com", :rel => "preconnect"}/
     %link{:href => "https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Spartan:wght@200&display=swap", :rel => "stylesheet"}
 
+    - if cookies[:moon]
+      %link{:href => "https://jenil.github.io/bulmaswatch/nuclear/bulmaswatch.min.css", :rel => "stylesheet"}
+      = stylesheet_link_tag 'application_dark', media: 'all', 'data-turbolinks-track': 'reload'
+    - else
+      %link{:href => "https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css", :rel => "stylesheet"}
+      = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = stylesheet_link_tag 'selectize', media: 'all', 'data-turbolinks-track': 'reload'
     = favicon_link_tag asset_path('favicon.png')
