@@ -1,6 +1,9 @@
+.has-text-centered.title.is-6= @recipe.title
+= render "admin/menu"
 .max-width
-  .card
-    %figure.image
-      = image_tag @recipe.main_image_show
-  %br
-  = render partial: "form", locals: {url: recipe_update_path}
+  .box
+    .card
+      %figure.image
+        = image_tag @recipe.main_image_show
+    %br
+    = render partial: "form", locals: {url: recipe_update_path}

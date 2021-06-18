@@ -54,6 +54,14 @@ body {
   border: none
 }
 
+.tabs a, .tabs ul {
+	align-items: center;
+	border-bottom-color: white;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	display: flex;
+}
+
 .button, .card-header, .content h1, .content h2, .content h3, .content h4, .content h5, .content h6, .menu-label, .message-header, .tabs, .title {
 	text-transform: none;
   font-family: "Raleway", sans-serif;
@@ -129,10 +137,6 @@ body {
 
 .navbar-link:hover {
   color: #8E9775;
-}
-
-.navbar-end {
-  margin-left: 14rem;
 }
 
 a {

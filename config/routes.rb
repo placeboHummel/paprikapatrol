@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get "/home/sun", to: "application#sun", as: "sun"
 
   get "/tracking", to: "tracking#index", as: :tracking_index
+  get "/admin", to: redirect("/new")
 
   get "/day", to: "day#index", as: :day_index
   get "/day/new", to: "day#new", as: :day_new

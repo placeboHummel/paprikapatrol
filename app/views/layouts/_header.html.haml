@@ -7,27 +7,17 @@
       %span{"aria-hidden" => "true"}
   #navbarExampleTransparentExample.navbar-menu
     .navbar-start
+      ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
       = link_to '<i class="fa fa-home"></i>⠀Home'.html_safe, root_path, class: "navbar-item #{'is-current' if current_page?(root_path)}"
-      = link_to '<i class="fa fa-book"></i>⠀Alle Rezepte'.html_safe, recipe_index_path, class: "navbar-item #{'is-current' if current_page?(recipe_index_path)}"
       = link_to '<i class="fa fa-calendar-alt"></i>⠀Wochenplan'.html_safe, day_index_path, class: "navbar-item #{'is-current' if current_page?(day_index_path)}"
-      .navbar-item.has-dropdown.is-hoverable
-        %a.navbar-link
-          Mehr
-        .navbar-dropdown
-          - if !user_signed_in?
-            = link_to '<i class="fas fa-sign-in-alt"></i>⠀Login'.html_safe, new_user_session_path, class: "navbar-item #{'is-current' if current_page?(new_user_session_path)}"
-          - if user_signed_in?
-            = link_to '<i class="far fa-chart-bar"></i>⠀Tracking'.html_safe, tracking_index_path, class: "navbar-item #{'is-current' if current_page?(tracking_index_path)}"
-            = link_to '<i class="fa fa-plus"></i>⠀ Neues Rezept'.html_safe, recipe_new_path, class: "navbar-item #{'is-current' if current_page?(recipe_new_path)}"
-            = link_to '<i class="fas fa-sync"></i>⠀ Startseite aufräumen'.html_safe, reorder_path, class: "navbar-item #{'is-current' if current_page?(recipe_new_path)}"
-          = search_form_for @q, url: recipe_index_path do |f|
-            .control.navbar-item
-              = f.search_field :title_or_action_text_rich_text_body_cont, class: "input", placeholder: "🔍 Suche"
+      ⠀⠀⠀
+      = search_form_for @q, url: root_path do |f|
+        .navbar-item
+          = f.search_field :title_or_action_text_rich_text_body_cont, class: "input", placeholder: "Suchen.."
+
     .navbar-end
-      .navbar-item
-        - if cookies[:moon]
-          .has-text-right
-            = link_to '<i class="fas fa-sun"></i>'.html_safe, sun_path, class: "no-text-decoration", style: "color: white; font-size: 20px;"
-        - else
-          .has-text-right.has-text-dark
-            = link_to '<i class="fas fa-moon"></i>'.html_safe, moon_path, class: "no-text-decoration", style: "color: black; font-size: 20px;"
+      = link_to '<i class="fas fa-user-circle"></i>⠀Admin'.html_safe, admin_path, class: "navbar-item #{'is-current' if current_page?(recipe_new_path)}"
+    - if cookies[:moon]
+      = link_to '<i class="fas fa-sun"></i>⠀Light Mode'.html_safe, sun_path, class: "navbar-item"
+    - else
+      = link_to '<i class="fas fa-moon"></i>⠀Dark Mode'.html_safe, moon_path, class: "navbar-item"

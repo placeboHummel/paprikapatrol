@@ -1,6 +1,9 @@
+.has-text-centered.title.is-6 Besuchertracking
+= render "admin/menu"
 .max-width
-	.title.is-5 Besucher
-	= line_chart Ahoy::Visit.group_by_day(:started_at).count
-	%br
-	.title.is-5 Klicks
-	= line_chart Ahoy::Event.group_by_day(:time).count
+	.box
+		.title.is-5 Besucher
+		= line_chart Ahoy::Visit.group_by_day(:started_at).count
+		%br
+		.title.is-5 Klicks
+		= line_chart Ahoy::Event.group_by_day(:time).count

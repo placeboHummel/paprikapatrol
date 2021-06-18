@@ -1,0 +1,13 @@
+.max-width
+	.tabs.is-centered
+		%ul
+			%li{class: "#{'is-active' if current_page?(recipe_new_path)}"}
+				= link_to '<i class="fa fa-plus"></i>'.html_safe, recipe_new_path
+			%li{class: "#{'is-active' if current_page?(recipe_index_path)}"}
+				= link_to '<i class="fa fa-book"></i>'.html_safe, recipe_index_path
+			%li{class: "#{'is-active' if current_page?(tracking_index_path)}"}
+				= link_to '<i class="far fa-chart-bar"></i>'.html_safe, tracking_index_path
+			%li
+				┋
+			%li
+				= link_to '<i class="fas fa-broom"></i>'.html_safe, reorder_path, data: { confirm: "🧹 Startseite aufräumen\n\nAlle Rezepteinträge ohne Titelbild verschwinden von der Startseite.\n\nFortfahren?" }

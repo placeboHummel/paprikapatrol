@@ -37,6 +37,13 @@ body {
   float: none !important;
 }
 
+.tabs ul {
+	flex-shrink: 1;
+	flex-wrap: wrap;
+	border-bottom-color: transparent;
+  margin-bottom: 1.5rem;
+}
+
 .yield {
   margin-left: 0.8rem;
   margin-right: 0.8rem;
@@ -84,9 +91,7 @@ body {
   color: #8E9775;
 }
 
-.navbar-end {
-  margin-left: 14rem;
-}
+
 
 .table td,
 .table th {

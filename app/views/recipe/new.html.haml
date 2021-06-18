@@ -1,1 +1,5 @@
-= render partial: "form", locals: {url: recipe_create_path}
+.has-text-centered.title.is-6 Neues Rezept
+= render "admin/menu"
+.max-width
+  .box
+    = render partial: "form", locals: {url: recipe_create_path}

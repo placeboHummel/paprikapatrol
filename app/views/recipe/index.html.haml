@@ -1,17 +1,20 @@
+.has-text-centered.title.is-6 Alle Rezepte
+= render "admin/menu"
 .max-width
-  %table.table.is-fullwidth.is-hoverable
-    %thead
-      %tr
-    %tbody
-    - @recipe.each do |recipe|
-      %tr
-        %td
-          %a{:href => "/#{recipe.id}/"}
-            = image_tag recipe.main_image_all_recipes
-        %td
-          %a{:href => "/#{recipe.id}/", :class => "has-text-dark"}
-            %p= recipe.title
-            - if user_signed_in?
-              = link_to '<i class="fas fa-pencil-alt"></i>⠀Bearbeiten'.html_safe, edit_recipe_path(recipe), class: "is-size-7 has-text-dark"
-              ⠀
-              = link_to '<i class="fas fa-times"></i>⠀Löschen'.html_safe, recipe_delete_path(recipe), method: :delete, class: "is-size-7 has-text-dark", data: { confirm: "'#{recipe.title}' wirklich löschen?" }
+  .box
+    %table.table.is-fullwidth.is-hoverable
+      %thead
+        %tr
+      %tbody
+      - @recipe.each do |recipe|
+        %tr
+          %td
+            %a{:href => "/#{recipe.id}/"}
+              = image_tag recipe.main_image_all_recipes
+          %td
+            %a{:href => "/#{recipe.id}/", :class => "has-text-dark"}
+              %p= recipe.title
+              - if user_signed_in?
+                = link_to '<i class="fas fa-pencil-alt"></i>⠀Bearbeiten'.html_safe, edit_recipe_path(recipe), class: "is-size-7 has-text-dark"
+                ⠀
+                = link_to '<i class="fas fa-times"></i>⠀Löschen'.html_safe, recipe_delete_path(recipe), method: :delete, class: "is-size-7 has-text-dark", data: { confirm: "🗑️\n\n'#{recipe.title}' wird gelöscht\n\n Fortfahren?" }

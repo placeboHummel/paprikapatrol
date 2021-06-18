@@ -8,6 +8,6 @@ class HomeController < ApplicationController
 
   def reorder
     Recipe.reorder_in_progress
-    redirect_to root_path
+    redirect_to admin_path
   end
 end
