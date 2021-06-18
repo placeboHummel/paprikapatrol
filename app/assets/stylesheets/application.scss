@@ -20,6 +20,13 @@
 @import "./actiontext.scss";
 @import "font-awesome";
 
+html {
+  position: relative;
+  margin: 0;
+  padding-bottom: 2rem;
+  min-height: 100%;
+}
+
 body {
   font-family: "Raleway", sans-serif;
 }
@@ -55,6 +62,16 @@ body {
 
 .is-current {
   color: #8E9775;
+}
+
+.footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #efefef;
+  text-align: center;
 }
 
 .navbar-link:not(.is-arrowless)::after {
