@@ -7,7 +7,7 @@
   </a>
 
   <p align="center">
-    <h3>A ruby on rails application for managing recipes and meal plans.</h3>
+<h3><center>A ruby on rails application for managing recipes and meal plans.</center></h3>
     <br />
     <a href="https://paprikapatrol.de">View Demo</a>
     ·
