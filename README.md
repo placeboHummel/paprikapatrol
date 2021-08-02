@@ -9,7 +9,7 @@
   <p align="center">
 A ruby on rails application for managing recipes and meal plans.
     <br />
-    <a href="https://paprikapatrol.de">View Demo</a>
+    <a href="https://paprikapatrol.de">View Live</a>
     ·
     <a href="https://github.com/placeboHummel/paprikapatrol/issues">Report Bug</a>
     ·
